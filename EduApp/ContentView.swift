@@ -11,8 +11,19 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
+    
+    var body: some View{
+        NavigationStack{
+            VStack{
+                NavigationLink(destination: TimerView()) {
+                    Text("New Cycle")
+                }
+                
+            }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight:.infinity).background(Color.black).foregroundColor(.white)
+        }
+    }
 
-    var body: some View {
+    var two: some View {
         NavigationSplitView {
             List {
                 ForEach(items) { item in
