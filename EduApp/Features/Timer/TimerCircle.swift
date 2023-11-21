@@ -1,9 +1,12 @@
 import SwiftUI
 
 struct TimerCircle: View {
-    @State private var timeRemainingNumber = 30
+    @State var breakTime = false
+    @State private var timeRemainingNumber = 6
     @State private var timeRemaining = ""
+    @State var gradientColor : Color = .purple
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
 
     var body: some View {
         ZStack {
@@ -12,7 +15,7 @@ struct TimerCircle: View {
                     EllipticalGradient(
                         stops: [
                             Gradient.Stop(color: .black, location: 0.70),
-                            Gradient.Stop(color: Color(red: 0, green: 1, blue: 0), location: 1.00),
+                            Gradient.Stop(color:gradientColor, location: 1.00)
                         ],
                         center: UnitPoint(x: 0.5, y: 0.5)
                     )
@@ -34,12 +37,19 @@ struct TimerCircle: View {
     }
 
     func minus1second() {
-        if timeRemainingNumber > 0 {
+        gradientColor = breakTime
+        ?Color.green
+        :Color.purple
             timeRemainingNumber -= 1
             let minutes = timeRemainingNumber / 60
             let seconds = timeRemainingNumber % 60
+            if(minutes == 0 && seconds == 0){
+                breakTime.toggle()
+                timeRemainingNumber = breakTime
+                                            ?5
+                                            :10
+            }
             timeRemaining = String(format: "%02d:%02d", minutes, seconds)
-        }
     }
 }
 

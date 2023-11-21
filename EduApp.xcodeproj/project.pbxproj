@@ -15,6 +15,7 @@
 		6C66C2C42B0CE3BC00E22EAC /* EvolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66C2C32B0CE3BC00E22EAC /* EvolutionView.swift */; };
 		6C66C2C62B0CE42400E22EAC /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66C2C52B0CE42400E22EAC /* TimerView.swift */; };
 		6C66C2C82B0CE96900E22EAC /* TimerCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66C2C72B0CE96900E22EAC /* TimerCircle.swift */; };
+		6C66C2CA2B0CF8E700E22EAC /* TimerToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66C2C92B0CF8E700E22EAC /* TimerToDo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		6C66C2C32B0CE3BC00E22EAC /* EvolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionView.swift; sourceTree = "<group>"; };
 		6C66C2C52B0CE42400E22EAC /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		6C66C2C72B0CE96900E22EAC /* TimerCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCircle.swift; sourceTree = "<group>"; };
+		6C66C2C92B0CF8E700E22EAC /* TimerToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerToDo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				6C66C2C52B0CE42400E22EAC /* TimerView.swift */,
+				6C66C2C92B0CF8E700E22EAC /* TimerToDo.swift */,
 				6C66C2C72B0CE96900E22EAC /* TimerCircle.swift */,
 			);
 			path = Timer;
@@ -179,6 +182,7 @@
 				6C66C2B52B0CE31700E22EAC /* Item.swift in Sources */,
 				6C66C2C42B0CE3BC00E22EAC /* EvolutionView.swift in Sources */,
 				6C66C2B12B0CE31700E22EAC /* EduAppApp.swift in Sources */,
+				6C66C2CA2B0CF8E700E22EAC /* TimerToDo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
