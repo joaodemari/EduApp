@@ -10,6 +10,8 @@ import SwiftData
 
 
 struct TimerView: View {
+    
+    @EnvironmentObject var area: Area
 
     var body: some View {
         VStack{

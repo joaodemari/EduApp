@@ -10,7 +10,7 @@ import SwiftData
 import SwiftUI
 
 @Model
-final class Area {
+final class Area: ObservableObject{
     var id = UUID()
     var name: String;
     var tasks: [String];
@@ -21,6 +21,10 @@ final class Area {
         self.name = name
         self.tasks = []
         self.color = color
+    }
+    
+    func cycleToString() -> String {
+        return lastCycle?.description ?? ""
     }
 }
 

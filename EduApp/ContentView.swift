@@ -42,7 +42,7 @@ struct ContentView: View {
     }
     
     func addItem(){
-        let area = Area(name: "SwiftUI", color: .Purple)
+        let area = Area(name: "Matemática", color: .Blue)
         context.insert(area)
     }
     
