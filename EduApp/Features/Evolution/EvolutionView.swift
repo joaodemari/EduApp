@@ -44,43 +44,72 @@ let data: [Day] = [
 ]
 
 struct EvolutionView: View {
+    
     var body: some View {
-        
-        VStack (alignment: .center, spacing: 58) {
-            Rectangle()
-              .foregroundColor(.clear)
-              .frame(width: 310, height: 310)
-              .background(
-                EllipticalGradient(
-                  stops: [
-                    Gradient.Stop(color: .black, location: 0.70),
-                    Gradient.Stop(color: Color(red: 1, green: 0, blue: 0), location: 1.00),
-                  ],
-                  center: UnitPoint(x: 0.5, y: 0.5)
-                )
-              )
-              .cornerRadius(310)
-            Chart{
-                ForEach(data) { shape in
-                    BarMark(
-                        x: .value("Category", shape.day),
-                        y: .value("Value", shape.hours)
-                    )
-                    .foregroundStyle(shape.color)
-                    
+        ScrollView {
+            VStack (alignment: .center, spacing: 58) {
+                ZStack{
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 310, height: 310)
+                        .background(
+                            EllipticalGradient(
+                                stops: [
+                                    Gradient.Stop(color: .black, location: 0.70),
+                                    Gradient.Stop(color: Color(red: 1, green: 0, blue: 0), location: 1.00),
+                                ],
+                                center: UnitPoint(x: 0.5, y: 0.5)
+                            )
+                        )
+                        .cornerRadius(310)
+                    Circle()
+                        .fill(.black)
+                        .frame(width: 260, height: 260)
+                    VStack {
+                        Text("45")
+                        
+                            .font(.system(size: 112).bold())
+                            .foregroundColor(.white)
+                        Text("days")
+                            .font(.largeTitle.bold())
+                            .foregroundColor(.white)
+                    }
                 }
+                Chart{
+                    ForEach(data) { shape in
+                        BarMark(
+                            x: .value("Category", shape.day),
+                            y: .value("Value", shape.hours)
+                        )
+                        .foregroundStyle(shape.color)
+                    }
+                }
+                .frame(width: 300, height: 200)
+                .background(.black)
+                VStack {
+                    HStack{
+                        Text("Math")
+                            .font(.title.bold())
+                        
+                        Spacer()
+                        
+                        Text("0")
+                            .font(.title.bold())
+                    }
+                    .foregroundColor(.white)
+                }
+//                .padding(.horizontal, 100)
+                .padding(.top, 0)
+//                .padding(.bottom, 422)
+                .background(.black)
+                .cornerRadius(16)
             }
-            .chartForegroundStyleScale([
-                "Math": Color("Orange"), "History": Color("Blue"), "Science": Color("Green"), "Geography": Color("Yellow")
-            ])
-            .frame(width: 300, height: 200)
+            .padding(.horizontal, 100)
+            .padding(.top, 100)
+            //        .padding(.bottom, )
             .background(.black)
+            .cornerRadius(16)
         }
-        .padding(.horizontal, 100)
-        .padding(.top, 0)
-        .padding(.bottom, 422)
-        .background(.black)
-        .cornerRadius(16)
     }
 }
 
