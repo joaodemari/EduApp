@@ -10,16 +10,16 @@ import SwiftData
 
 
 struct TimerView: View {
+
     var body: some View {
         VStack{
             TimerCircle()
             TimerPresent()
         }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity).background(Color.black)
     }
-  
 }
 
 
 #Preview{
-    TimerView().modelContainer(for: Item.self, inMemory: true)
+    TimerView()
 }

@@ -86,5 +86,5 @@ struct EvolutionView: View {
 
 #Preview {
     EvolutionView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Area.self, inMemory: true)
 }
