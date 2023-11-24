@@ -11,7 +11,7 @@ import SwiftData
 
 struct TimerView: View {
     
-    @EnvironmentObject var area: Area
+    var area: Area
 
     var body: some View {
         VStack{
@@ -23,5 +23,5 @@ struct TimerView: View {
 
 
 #Preview{
-    TimerView()
+    TimerView(area:Area(name:"SwiftUI", color:.Blue))
 }

@@ -13,36 +13,41 @@ struct AreaGridView: View {
     
     @Environment(\.modelContext) private var context
     @Query private var areas: [Area]
-    
-    let data = (1...100).map { "Item \($0)" }
 
     let columns = [
         GridItem(.adaptive(minimum: 150))
     ]
 
     var body: some View {
-        HStack {
-            Text("Subjects")
-                .foregroundColor(.white)
-                .font(.title)
-                .bold()
-            Spacer()
-            Button(action: {
-                addItem()
-            }, label:{
-                Image(systemName: "plus.circle.fill")
-                    .foregroundColor(.green)
-                    .imageScale(.large)
-            })
-            
-        }
-        .padding()
+        
+            HStack {
+                Text("Subjects")
+                    .foregroundColor(.white)
+                    .font(.title)
+                    .bold()
+                Spacer()
+                Button(action: {
+                    addItem()
+                }, label:{
+                    Image(systemName: "plus.circle.fill")
+                        .foregroundColor(.green)
+                        .imageScale(.large)
+                })
+                
+            }
+            .padding()
             LazyVGrid(columns: columns, spacing: 8) {
+                
                 ForEach(areas, id: \.self) { area in
-                    AreaCard(area: area)
-                        .background(area.color.getColor())
-                        .cornerRadius(8)
+                    
+                    NavigationLink(destination: TimerView(area:area), label:{
+                        AreaCard(area: area)
+                            .background(area.color.getColor())
+                            .cornerRadius(8)
+                    })
+
                 }
+                
             }
             .padding(.horizontal)
     }

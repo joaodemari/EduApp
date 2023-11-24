@@ -16,6 +16,7 @@ struct AreaCard: View {
             Text(area.name)
                 .font(.system(size: 20))
                 .bold()
+                
             Text(area.cycleToString())
                 .lineLimit(2)
             HStack {
@@ -23,6 +24,7 @@ struct AreaCard: View {
                 Image(systemName: "play.fill")
             }
         }
+        .foregroundColor(.black)
         .padding()
     }
 }

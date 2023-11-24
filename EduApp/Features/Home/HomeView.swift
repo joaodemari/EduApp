@@ -11,45 +11,44 @@ import SwiftData
 
 struct HomeView: View {
     
-    
-    
-    
-   
     var body: some View {
-        ScrollView {
-            
-            HomeViewHeader()
-            
-            VStack {
-                Text("My Evolution")
-                    .foregroundColor(.white)
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .bold()
-                    .frame(alignment: .leading)
+        NavigationStack{
+            ScrollView {
                 
-               ChartView()
+                HomeViewHeader()
                 
-                HStack {
-                    Image(systemName: "play")
-                    Text("New Cycle")
-                        .font(.system(size: 20))
+                VStack {
+                    Text("My Evolution")
+                        .foregroundColor(.white)
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                         .bold()
+                        .frame(alignment: .leading)
+                    
+                    ChartView()
+                    
+                    HStack {
+                        
+                        Image(systemName: "play")
+                        Text("New Cycle")
+                            .font(.system(size: 20))
+                            .bold()
+                    }
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color("Gray"))
+                    .cornerRadius(8)
+                    
+                    
+                    AreaGridView()
+                    
+                    
                 }
-                .foregroundColor(.white)
-                .padding()
-                .background(Color("Gray"))
-                .cornerRadius(8)
-                
-                
-                AreaGridView()
-                
-                
             }
-        }
-        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
-        .background(Color.black)
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
+            .background(Color.black)
+            
+        }}
         
-    }
     
     
 }
