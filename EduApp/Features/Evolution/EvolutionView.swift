@@ -176,4 +176,5 @@ struct EvolutionView: View {
 
 #Preview {
     EvolutionView()
+        .modelContainer(for: Area.self, inMemory: true)
 }

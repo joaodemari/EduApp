@@ -12,7 +12,7 @@ import SwiftData
 struct EduAppApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Area.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,8 +25,13 @@ struct EduAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .preferredColorScheme(.dark)
         }
         .modelContainer(sharedModelContainer)
     }
+}
+
+#Preview{
+    ContentView()
 }

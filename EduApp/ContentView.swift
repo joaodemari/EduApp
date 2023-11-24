@@ -9,53 +9,51 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
-    var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+    @Environment(\.modelContext) private var context
+    @Query private var areas: [Area]
+    
+    var body: some View{
+        NavigationStack{
+            VStack{
+                NavigationLink(destination: TimerView()) {
+                    Text("New Cycle")
+                }
+                
+            }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight:.infinity).background(Color.black).foregroundColor(.white)
+            VStack {
+                
+                Text("Tap on this button to add data")
+                Button("Add an item"){
+                    addItem()
+                }
+               
+                List {
+                    ForEach (areas) {area in
+                        Text(area.name)
+                    }.onDelete{indexes in
+                        for index in indexes {
+                            deleteItem(areas[index])
+                        }
                     }
                 }
-                .onDelete(perform: deleteItems)
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
+            .padding()
         }
+    }
+    
+    func addItem(){
+        let area = Area(name: "Matemática", color: .Blue)
+        context.insert(area)
+    }
+    
+    func deleteItem(_ area: Area){
+        context.delete(area)
     }
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
 
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
-    }
 }
 
 #Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+    ContentView().modelContainer(for: Area.self)
+        
 }
