@@ -19,23 +19,21 @@ struct AreaGridView: View {
     ]
 
     var body: some View {
-        
-            HStack {
-                Text("Subjects")
-                    .foregroundColor(.white)
-                    .font(.title)
-                    .bold()
-                Spacer()
-                Button(action: {
-                    addItem()
-                }, label:{
-                    Image(systemName: "plus.circle.fill")
-                        .foregroundColor(.green)
-                        .imageScale(.large)
-                })
-                
-            }
-            .padding()
+        HStack {
+            Text("Subjects")
+                .font(.title)
+                .bold()
+            Spacer()
+            Button(action: {
+                addItem()
+            }, label:{
+                Image(systemName: "plus.circle.fill")
+                    .foregroundColor(.green)
+                    .imageScale(.large)
+            })
+            
+        }
+        .padding()
             LazyVGrid(columns: columns, spacing: 8) {
                 
                 ForEach(areas, id: \.self) { area in

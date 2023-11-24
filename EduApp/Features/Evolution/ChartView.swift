@@ -63,7 +63,7 @@ struct ChartView: View {
         }
         
         .frame(width: 352, height: 200)
-        .background(.black)
+        //.background(.black)
         //.padding(.horizontal,36)
     }
 }

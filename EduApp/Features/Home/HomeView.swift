@@ -10,13 +10,28 @@ import SwiftData
 // trocar lastAcess p data
 
 struct HomeView: View {
-    @State var myEvolutionTouched = false
+    
+    
+    
+    
+    
     var body: some View {
         ScrollView {
             
             HomeViewHeader()
             
             VStack {
+                HStack {
+                    Text("My Evolution")
+                        .foregroundColor(.white)
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .bold()
+                        .frame(alignment: .leading)
+                    Spacer()
+                }
+                .padding()
+                
+                ChartView()
                 
                 VStack(alignment: .leading) {
                     
@@ -28,16 +43,7 @@ struct HomeView: View {
                     ChartView()
                 }
                 HStack {
-                    Image(systemName: "play")
-                    Text("New Cycle")
-                        .font(.system(size: 20))
-                        .bold()
-                        .frame(alignment: .leading)
-                    
-                    ChartView()
-                    
                     HStack {
-                        
                         Image(systemName: "play")
                         Text("New Cycle")
                             .font(.system(size: 20))
@@ -45,19 +51,29 @@ struct HomeView: View {
                     }
                     .foregroundColor(.white)
                     .padding()
-                    .background(Color("Gray"))
+                    .background(Color.gray)
                     .cornerRadius(8)
                     
+                    Spacer()
                     
-                    AreaGridView()
-                    
-                    
+                    HStack {
+                        Image(systemName: "book.pages.fill")
+                        Text("Anotações")
+                            .font(.system(size: 20))
+                            .bold()
+                    }
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.gray)
+                    .cornerRadius(8)
                 }
+                .padding()
+                AreaGridView()
+                
+                
             }
-            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
-            .background(Color.black)
-            
-        }}
+        }
+        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
         
     
     
