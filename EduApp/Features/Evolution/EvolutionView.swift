@@ -15,19 +15,6 @@ struct Day: Identifiable {
     var hours: Int
     var color: Color
     var id = UUID()
-    
-//    func test(dates: [Date]) -> [Int] {
-//        dates.compactMap({return getDay(date: $0)})
-//    }
-//    
-//    func getDay(date: Date) -> Int {
-//        var calendar = Calendar(identifier: .gregorian)
-//        var components = calendar.dateComponents(in: .current, from: date)
-//        
-//        
-//        return components.day ?? 0
-//
-//    }
 }
 
 
@@ -124,7 +111,6 @@ struct EvolutionView: View {
                         .foregroundColor(.white)
                     }
                     .padding(.trailing, 36)
-                    //.padding(.leading, 36)
                     .padding(.top, 8)
                     .padding(.bottom, 24)
                     .background(.black)
