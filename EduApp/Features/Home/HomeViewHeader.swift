@@ -25,8 +25,8 @@ struct HomeViewHeader: View {
                 .frame(maxWidth: 100, maxHeight: 100)
             Spacer()
             Image(systemName: "bell.fill")
-                .imageScale(.medium)
-                .foregroundColor(.white)
+                .imageScale(.large)
+                .foregroundColor(.gray)
             
         }
         .padding()

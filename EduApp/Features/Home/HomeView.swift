@@ -14,40 +14,57 @@ struct HomeView: View {
     
     
     
-   
+    
     var body: some View {
         ScrollView {
             
             HomeViewHeader()
             
             VStack {
-                Text("My Evolution")
-                    .foregroundColor(.white)
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .bold()
-                    .frame(alignment: .leading)
+                HStack {
+                    Text("My Evolution")
+                        .foregroundColor(.white)
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .bold()
+                        .frame(alignment: .leading)
+                    Spacer()
+                }
+                .padding()
                 
-               ChartView()
+                ChartView()
                 
                 HStack {
-                    Image(systemName: "play")
-                    Text("New Cycle")
-                        .font(.system(size: 20))
-                        .bold()
+                    HStack {
+                        Image(systemName: "play")
+                        Text("New Cycle")
+                            .font(.system(size: 20))
+                            .bold()
+                    }
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.gray)
+                    .cornerRadius(8)
+                    
+                    Spacer()
+                    
+                    HStack {
+                        Image(systemName: "book.pages.fill")
+                        Text("Anotações")
+                            .font(.system(size: 20))
+                            .bold()
+                    }
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.gray)
+                    .cornerRadius(8)
                 }
-                .foregroundColor(.white)
                 .padding()
-                .background(Color("Gray"))
-                .cornerRadius(8)
-                
-                
                 AreaGridView()
                 
                 
             }
         }
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
-        .background(Color.black)
         
     }
     

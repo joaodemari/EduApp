@@ -23,7 +23,6 @@ struct AreaGridView: View {
     var body: some View {
         HStack {
             Text("Subjects")
-                .foregroundColor(.white)
                 .font(.title)
                 .bold()
             Spacer()
