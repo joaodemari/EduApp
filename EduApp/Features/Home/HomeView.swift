@@ -10,17 +10,27 @@ import SwiftData
 // trocar lastAcess p data
 
 struct HomeView: View {
-    
+    @State var myEvolutionTouched = false
     var body: some View {
-        NavigationStack{
-            ScrollView {
+        ScrollView {
+            
+            HomeViewHeader()
+            
+            VStack {
                 
-                HomeViewHeader()
-                
-                VStack {
+                VStack(alignment: .leading) {
+                    
                     Text("My Evolution")
                         .foregroundColor(.white)
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .font(.title)
+                        .bold()
+                        .frame(alignment: .leading)
+                    ChartView()
+                }
+                HStack {
+                    Image(systemName: "play")
+                    Text("New Cycle")
+                        .font(.system(size: 20))
                         .bold()
                         .frame(alignment: .leading)
                     

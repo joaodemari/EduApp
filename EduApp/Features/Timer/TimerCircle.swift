@@ -5,7 +5,7 @@ struct TimerCircle: View {
     @State var breakTime = false
     @State private var timeRemainingNumber = 6
     @State private var timeRemaining = ""
-    @State var gradientColor : Color = .green
+    @State var gradientColor : Color
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
 
