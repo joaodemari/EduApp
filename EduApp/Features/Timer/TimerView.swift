@@ -15,7 +15,7 @@ struct TimerView: View {
 
     var body: some View {
         VStack{
-            TimerCircle()
+            TimerCircle(area:area)
             TimerPresent()
         }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity).background(Color.black)
     }

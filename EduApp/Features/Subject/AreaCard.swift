@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SubjectCard: View {
+struct AreaCard: View {
     
     var area: Area
     

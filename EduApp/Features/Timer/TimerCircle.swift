@@ -1,10 +1,11 @@
 import SwiftUI
 
 struct TimerCircle: View {
+    @StateObject var area : Area
     @State var breakTime = false
     @State private var timeRemainingNumber = 6
     @State private var timeRemaining = ""
-    @State var gradientColor : Color = .purple
+    @State var gradientColor : Color = .green
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
 
@@ -39,7 +40,7 @@ struct TimerCircle: View {
     func minus1second() {
         gradientColor = breakTime
         ?Color.green
-        :Color.purple
+        :area.color.getColor()
             timeRemainingNumber -= 1
             let minutes = timeRemainingNumber / 60
             let seconds = timeRemainingNumber % 60
@@ -54,5 +55,5 @@ struct TimerCircle: View {
 }
 
 #Preview{
-    TimerView()
+    HomeView()
 }

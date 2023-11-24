@@ -11,20 +11,9 @@ import SwiftData
 
 struct HomeView: View {
     
-    @Environment(\.modelContext) private var context
-    @Query private var areas: [Area]
     
-    var indices: [Int] {
-        var leftSide: [Int] = []
-        
-        for i in areas.indices {
-            if i%2 == 0 {
-                leftSide.append(i)
-            }
-        }
-        
-        return leftSide
-    }
+    
+    
    
     var body: some View {
         ScrollView {
@@ -53,44 +42,19 @@ struct HomeView: View {
                 .background(Color("Gray"))
                 .cornerRadius(8)
                 
-                HStack {
-                    Text("Subjects")
-                        .foregroundColor(.white)
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                        .bold()
-                    Spacer()
-                    Image(systemName: "plus.circle.fill")
-                        .foregroundColor(.green)
-                        .imageScale(.large)
-                }
-                .padding()
                 
-                ForEach(indices, id: \.self) { indice in
-                    HStack {
-                        SubjectCard(area: areas[indice])
-                            .background(areas[indice].color.getColor())
-                            .cornerRadius(8)
-                        
-                        if indice+1 < subjects.count {
-                            
-                            SubjectCard(area: areas[indice+1])
-                                .background(areas[indice+1].color.getColor())
-                                .cornerRadius(8)
-                            
-                        } else {
-                            
-                            Spacer()
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                            
-                        }
-                    }
-                }
+                AreaGridView()
+                
+                
             }
         }
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
         .background(Color.black)
+        
     }
+    
+    
 }
 #Preview {
-    HomeView()
+    HomeView().modelContainer(for: Area.self)
 }

@@ -13,32 +13,7 @@ struct ContentView: View {
     @Query private var areas: [Area]
     
     var body: some View{
-        NavigationStack{
-            VStack{
-                NavigationLink(destination: TimerView()) {
-                    Text("New Cycle")
-                }
-                
-            }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight:.infinity).background(Color.black).foregroundColor(.white)
-            VStack {
-                
-                Text("Tap on this button to add data")
-                Button("Add an item"){
-                    addItem()
-                }
-               
-                List {
-                    ForEach (areas) {area in
-                        Text(area.name)
-                    }.onDelete{indexes in
-                        for index in indexes {
-                            deleteItem(areas[index])
-                        }
-                    }
-                }
-            }
-            .padding()
-        }
+        HomeView()
     }
     
     func addItem(){
