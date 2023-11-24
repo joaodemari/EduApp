@@ -11,39 +11,67 @@ import SwiftData
 import Charts
 
 struct Day: Identifiable {
-    var day: String
-    var hours: Double
+    var date: Date
+    var hours: Int
     var color: Color
     var id = UUID()
+    
+//    func test(dates: [Date]) -> [Int] {
+//        dates.compactMap({return getDay(date: $0)})
+//    }
+//    
+//    func getDay(date: Date) -> Int {
+//        var calendar = Calendar(identifier: .gregorian)
+//        var components = calendar.dateComponents(in: .current, from: date)
+//        
+//        
+//        return components.day ?? 0
+//
+//    }
 }
 
 
-let data: [Day] = [
-    .init(day: "13", hours: 2, color: Color("Green")),
-    .init(day: "13", hours: 1, color: Color("Red")),
-    .init(day: "14", hours: 3, color: Color("Green")),
-    .init(day: "15", hours: 2, color: Color("Red")),
-    .init(day: "16", hours: 5, color: Color("Orange")),
-    .init(day: "16", hours: 3, color: Color("Yellow")),
-    .init(day: "17", hours: 3, color: Color("Orange")),
-    .init(day: "18", hours: 4, color: Color("Yellow")),
-    .init(day: "19", hours: 2, color: Color("Purple")),
-    .init(day: "20", hours: 3, color: Color("Green")),
-    .init(day: "21", hours: 6, color: Color("Blue")),
-    .init(day: "22", hours: 2, color: Color("Green")),
-    .init(day: "23", hours: 1, color: Color("Red")),
-    .init(day: "24", hours: 3, color: Color("Green")),
-    .init(day: "25", hours: 2, color: Color("Red")),
-    .init(day: "26", hours: 5, color: Color("Orange")),
-    .init(day: "27", hours: 3, color: Color("Yellow")),
-    .init(day: "28", hours: 3, color: Color("Orange")),
-    .init(day: "29", hours: 4, color: Color("Yellow")),
-    .init(day: "30", hours: 2, color: Color("Purple")),
-    .init(day: "30", hours: 3, color: Color("Green")),
-    .init(day: "31", hours: 6, color: Color("Blue")),
-]
+extension Date {
+    static func from(year: Int, month: Int, day: Int) -> Date {
+        let components = DateComponents(year: year, month: month, day: day)
+        return Calendar.current.date(from: components)!
+    }
+}
 
 struct EvolutionView: View {
+    
+    @State var data: [Day] = [
+        .init(date: Date.from(year: 2023, month: 12, day: 1), hours: 2, color: Color("Green")),
+        .init(date: Date.from(year: 2023, month: 12, day: 2), hours: 1, color: Color("Red")),
+        .init(date: Date.from(year: 2023, month: 12, day: 3), hours: 3, color: Color("Green")),
+        .init(date: Date.from(year: 2023, month: 12, day: 4), hours: 2, color: Color("Red")),
+        .init(date: Date.from(year: 2023, month: 12, day: 5), hours: 5, color: Color("Orange")),
+        .init(date: Date.from(year: 2023, month: 12, day: 6), hours: 3, color: Color("Yellow")),
+        .init(date: Date.from(year: 2023, month: 12, day: 7), hours: 3, color: Color("Orange")),
+        .init(date: Date.from(year: 2023, month: 12, day: 8), hours: 4, color: Color("Yellow")),
+        .init(date: Date.from(year: 2023, month: 12, day: 9), hours: 2, color: Color("Purple")),
+        .init(date: Date.from(year: 2023, month: 12, day: 10), hours: 3, color: Color("Green")),
+        .init(date: Date.from(year: 2023, month: 12, day: 11), hours: 6, color: Color("Blue")),
+        .init(date: Date.from(year: 2023, month: 12, day: 12), hours: 2, color: Color("Green")),
+        .init(date: Date.from(year: 2023, month: 12, day: 13), hours: 1, color: Color("Red")),
+        .init(date: Date.from(year: 2023, month: 12, day: 14), hours: 3, color: Color("Green")),
+        .init(date: Date.from(year: 2023, month: 12, day: 15), hours: 2, color: Color("Red")),
+        .init(date: Date.from(year: 2023, month: 12, day: 16), hours: 2, color: Color("Green")),
+        .init(date: Date.from(year: 2023, month: 12, day: 17), hours: 1, color: Color("Red")),
+        .init(date: Date.from(year: 2023, month: 12, day: 18), hours: 3, color: Color("Green")),
+        .init(date: Date.from(year: 2023, month: 12, day: 19), hours: 2, color: Color("Red")),
+        .init(date: Date.from(year: 2023, month: 12, day: 20), hours: 5, color: Color("Orange")),
+        .init(date: Date.from(year: 2023, month: 12, day: 21), hours: 3, color: Color("Yellow")),
+        .init(date: Date.from(year: 2023, month: 12, day: 22), hours: 3, color: Color("Orange")),
+        .init(date: Date.from(year: 2023, month: 12, day: 23), hours: 4, color: Color("Yellow")),
+        .init(date: Date.from(year: 2023, month: 12, day: 24), hours: 2, color: Color("Purple")),
+        .init(date: Date.from(year: 2023, month: 12, day: 25), hours: 3, color: Color("Green")),
+        .init(date: Date.from(year: 2023, month: 12, day: 26), hours: 6, color: Color("Blue")),
+        .init(date: Date.from(year: 2023, month: 12, day: 27), hours: 2, color: Color("Green")),
+        .init(date: Date.from(year: 2023, month: 12, day: 28), hours: 1, color: Color("Red")),
+        .init(date: Date.from(year: 2023, month: 12, day: 29), hours: 3, color: Color("Green")),
+        .init(date: Date.from(year: 2023, month: 12, day: 30), hours: 2, color: Color("Red")),
+    ]
     
     var body: some View {
         ScrollView {
@@ -51,7 +79,7 @@ struct EvolutionView: View {
                 ZStack{
                     Rectangle()
                         .foregroundColor(.clear)
-                        .frame(width: 310, height: 310)
+                        .frame(width: 308, height: 308)
                         .background(
                             EllipticalGradient(
                                 stops: [
@@ -61,7 +89,7 @@ struct EvolutionView: View {
                                 center: UnitPoint(x: 0.5, y: 0.5)
                             )
                         )
-                        .cornerRadius(310)
+                        .cornerRadius(308)
                     Circle()
                         .fill(.black)
                         .frame(width: 260, height: 260)
@@ -75,43 +103,76 @@ struct EvolutionView: View {
                             .foregroundColor(.white)
                     }
                 }
-                Chart{
-                    ForEach(data) { shape in
-                        BarMark(
-                            x: .value("Category", shape.day),
-                            y: .value("Value", shape.hours)
-                        )
-                        .foregroundStyle(shape.color)
-                    }
+                .padding(.horizontal,48)
+                VStack (alignment: .leading) {
+                    Text("Last Month")
+                        .font(.title.bold())
+                        .foregroundColor(.white)
+                    ChartView(data: $data)
+                        .padding(.trailing, 36)
+                        .padding(.bottom, 8)
                 }
-                .frame(width: 300, height: 200)
-                .background(.black)
-                VStack {
-                    HStack{
-                        Text("Math")
-                            .font(.title.bold())
-                        
-                        Spacer()
-                        
-                        Text("0")
-                            .font(.title.bold())
+                .padding(.leading, 36)
+                VStack (alignment: .leading) {
+                    Text("Weekly Hours")
+                        .font(.title.bold())
+                        .foregroundColor(.white)
+                    VStack {
+                        HStack{
+                            Circle()
+                                .fill(Color("Green"))
+                                .frame(width: 16, height: 16)
+                            Text("Math")
+                                .font(.title2.bold())
+                            Spacer()
+                            Text("5")
+                                .font(.title2.bold())
+                        }
+                        .foregroundColor(.white)
+                        .padding(.bottom, 12)
+                        HStack{
+                            Circle()
+                                .fill(Color("Yellow"))
+                                .frame(width: 16, height: 16)
+                            Text("Biology")
+                                .font(.title2.bold())
+                            Spacer()
+                            Text("3")
+                                .font(.title2.bold())
+                        }
+                        .foregroundColor(.white)
+                        .padding(.bottom, 12)
+                        HStack{
+                            Circle()
+                                .fill(Color("Blue"))
+                                .frame(width: 16, height: 16)
+                            Text("History")
+                                .font(.title2.bold())
+                            Spacer()
+                            Text("7")
+                                .font(.title2.bold())
+                        }
+                        .foregroundColor(.white)
                     }
-                    .foregroundColor(.white)
+                    .padding(.trailing, 36)
+                    //.padding(.leading, 36)
+                    .padding(.top, 8)
+                    .padding(.bottom, 24)
+                    .background(.black)
+                    .cornerRadius(16)
                 }
-//                .padding(.horizontal, 100)
-                .padding(.top, 0)
-//                .padding(.bottom, 422)
-                .background(.black)
-                .cornerRadius(16)
+                .padding(.leading, 36)
             }
-            .padding(.horizontal, 100)
+            .padding(.horizontal, 24)
             .padding(.top, 100)
-            //        .padding(.bottom, )
+            .padding(.bottom, 24)
             .background(.black)
             .cornerRadius(16)
         }
     }
 }
+
+
 
 #Preview {
     EvolutionView()
