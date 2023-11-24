@@ -27,9 +27,7 @@ struct HomeView: View {
                     .bold()
                     .frame(alignment: .leading)
                 
-                Image("myEvolution")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+               ChartView()
                 
                 HStack {
                     Image(systemName: "play")
