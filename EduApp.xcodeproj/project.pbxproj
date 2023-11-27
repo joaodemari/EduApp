@@ -24,6 +24,10 @@
 		6C66C3092B10D47B00E22EAC /* AreaGridVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66C3082B10D47B00E22EAC /* AreaGridVIew.swift */; };
 		EB83B8752B0E34EA003DC8A2 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83B8742B0E34EA003DC8A2 /* ChartView.swift */; };
 		EB83B8792B10DFF2003DC8A2 /* StudyDayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83B8782B10DFF1003DC8A2 /* StudyDayModel.swift */; };
+		EB83B87C2B14C331003DC8A2 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83B87B2B14C331003DC8A2 /* NoteView.swift */; };
+		EB83B87E2B14C4D9003DC8A2 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83B87D2B14C4D9003DC8A2 /* NoteModel.swift */; };
+		EB83B8802B14C5EA003DC8A2 /* NoteCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83B87F2B14C5EA003DC8A2 /* NoteCard.swift */; };
+		EB83B8822B14D7F9003DC8A2 /* AreaSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83B8812B14D7F9003DC8A2 /* AreaSheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,10 @@
 		6C66C3082B10D47B00E22EAC /* AreaGridVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaGridVIew.swift; sourceTree = "<group>"; };
 		EB83B8742B0E34EA003DC8A2 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		EB83B8782B10DFF1003DC8A2 /* StudyDayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyDayModel.swift; sourceTree = "<group>"; };
+		EB83B87B2B14C331003DC8A2 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		EB83B87D2B14C4D9003DC8A2 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		EB83B87F2B14C5EA003DC8A2 /* NoteCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCard.swift; sourceTree = "<group>"; };
+		EB83B8812B14D7F9003DC8A2 /* AreaSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaSheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,15 +75,16 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		684556F52B0F948600E128E3 /* Subject */ = {
+		684556F52B0F948600E128E3 /* Area */ = {
 			isa = PBXGroup;
 			children = (
 				6C66C2B42B0CE31700E22EAC /* AreaModel.swift */,
 				684556F62B0F949400E128E3 /* AreaViewModel.swift */,
 				684556FA2B0F958400E128E3 /* AreaCard.swift */,
 				6C66C3082B10D47B00E22EAC /* AreaGridVIew.swift */,
+				EB83B8812B14D7F9003DC8A2 /* AreaSheetView.swift */,
 			);
-			path = Subject;
+			path = Area;
 			sourceTree = "<group>";
 		};
 		6C66C2A42B0CE31700E22EAC = {
@@ -118,7 +127,8 @@
 		6C66C2C02B0CE33300E22EAC /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				684556F52B0F948600E128E3 /* Subject */,
+				EB83B87A2B14C318003DC8A2 /* Notes */,
+				684556F52B0F948600E128E3 /* Area */,
 				684556F02B0F93C700E128E3 /* Home */,
 				6C66C2C22B0CE36000E22EAC /* Timer */,
 				6C66C2C12B0CE34F00E22EAC /* Evolution */,
@@ -152,6 +162,16 @@
 				6C66C3062B0F8D9B00E22EAC /* Color.swift */,
 			);
 			path = DataBase;
+			sourceTree = "<group>";
+		};
+		EB83B87A2B14C318003DC8A2 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				EB83B87B2B14C331003DC8A2 /* NoteView.swift */,
+				EB83B87D2B14C4D9003DC8A2 /* NoteModel.swift */,
+				EB83B87F2B14C5EA003DC8A2 /* NoteCard.swift */,
+			);
+			path = Notes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				684556FB2B0F958400E128E3 /* AreaCard.swift in Sources */,
+				EB83B8822B14D7F9003DC8A2 /* AreaSheetView.swift in Sources */,
 				684556F22B0F93DD00E128E3 /* HomeView.swift in Sources */,
 				6C66C2C62B0CE42400E22EAC /* TimerView.swift in Sources */,
 				6C66C2C82B0CE96900E22EAC /* TimerCircle.swift in Sources */,
@@ -232,6 +253,8 @@
 				6C66C2B52B0CE31700E22EAC /* AreaModel.swift in Sources */,
 				EB83B8752B0E34EA003DC8A2 /* ChartView.swift in Sources */,
 				6C66C2B52B0CE31700E22EAC /* AreaModel.swift in Sources */,
+				EB83B87C2B14C331003DC8A2 /* NoteView.swift in Sources */,
+				EB83B87E2B14C4D9003DC8A2 /* NoteModel.swift in Sources */,
 				6C66C2B52B0CE31700E22EAC /* AreaModel.swift in Sources */,
 				6C66C2C42B0CE3BC00E22EAC /* EvolutionView.swift in Sources */,
 				684556F42B0F940600E128E3 /* HomeViewHeader.swift in Sources */,
@@ -239,6 +262,7 @@
 				6C66C3072B0F8D9B00E22EAC /* Color.swift in Sources */,
 				6C66C2B12B0CE31700E22EAC /* EduAppApp.swift in Sources */,
 				EB83B8792B10DFF2003DC8A2 /* StudyDayModel.swift in Sources */,
+				EB83B8802B14C5EA003DC8A2 /* NoteCard.swift in Sources */,
 				6C66C2CA2B0CF8E700E22EAC /* TimerToDo.swift in Sources */,
 				6C66C3092B10D47B00E22EAC /* AreaGridVIew.swift in Sources */,
 			);

@@ -10,7 +10,7 @@ import SwiftData
 import SwiftUI
 
 struct AreaGridView: View {
-    
+    @State var isPresented: Bool = false
     @Environment(\.modelContext) private var context
     @Query private var areas: [Area]
     
@@ -27,12 +27,21 @@ struct AreaGridView: View {
                 .font(.title)
                 .bold()
             Spacer()
+                .onTapGesture {
+                    isPresented = true
+                }
+                
             Button(action: {
-                addItem()
+                isPresented = true
             }, label:{
                 Image(systemName: "plus.circle.fill")
                     .foregroundColor(.green)
                     .imageScale(.large)
+            }).sheet(isPresented: $isPresented, content: {
+                HStack{
+                    Text("djidjsijda")
+                }
+                //AreaSheetView(area: area)
             })
             
         }
