@@ -1,30 +1,26 @@
 //
-//  SubjectCard.swift
-//  teste2educ
+//  NoteCard.swift
+//  EduApp
 //
-//  Created by Foundation10 on 22/11/23.
+//  Created by Foundation13 on 27/11/23.
 //
 
 import SwiftUI
 
-struct AreaCard: View {
+struct NoteCard: View {
     
-    var area: Area
+    var note: Note
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(area.name)
+            Text("Note")
                 .font(.system(size: 20))
                 .bold()
-                
-            Text(area.cycleToString())
-                .lineLimit(2)
             HStack {
                 Spacer()
                 Image(systemName: "play.fill")
             }
         }
-        .foregroundColor(.black)
         .padding()
     }
 }

@@ -26,7 +26,7 @@ struct TimerPresent:View{
                         .sheet(isPresented: $shouldPresentSheet) {
                             print("Sheet dismissed!")
                         } content: {
-                            TimerToDo()
+                            NewNote()
                         }
 
                 }
@@ -34,22 +34,3 @@ struct TimerPresent:View{
     }
 }
 
-struct TimerToDo: View{
-
-    
-    var body: some View {
-        VStack {
-            
-        }
-    }
-
-    private func addItem() {
-        
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-    }
-}
-
-//#Preview{
-//}

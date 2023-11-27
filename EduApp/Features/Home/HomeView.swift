@@ -11,73 +11,61 @@ import SwiftData
 
 struct HomeView: View {
     
-    
-    
-    
-    
     var body: some View {
-        ScrollView {
-            
-            HomeViewHeader()
-            
-            VStack {
-                HStack {
-                    Text("My Evolution")
-                        .foregroundColor(.white)
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                        .bold()
-                        .frame(alignment: .leading)
-                    Spacer()
-                }
-                .padding()
+        NavigationStack{
+            ScrollView {
                 
-                ChartView()
+                HomeViewHeader()
                 
-                VStack(alignment: .leading) {
+                VStack {
                     
-                    Text("My Evolution")
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .bold()
-                        .frame(alignment: .leading)
-                    ChartView()
-                }
-                HStack {
-                    HStack {
-                        Image(systemName: "play")
-                        Text("New Cycle")
-                            .font(.system(size: 20))
+                    VStack(alignment: .leading) {
+                        
+                        Text("My Evolution")
+                            .foregroundColor(.white)
+                            .font(.title)
                             .bold()
+                            .frame(alignment: .leading)
+                        ChartView()
                     }
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.gray)
-                    .cornerRadius(8)
-                    
-                    Spacer()
-                    
                     HStack {
-                        Image(systemName: "book.pages.fill")
-                        Text("Anotações")
-                            .font(.system(size: 20))
-                            .bold()
+                        HStack {
+                            Image(systemName: "play")
+                            Text("New Cycle")
+                                .font(.system(size: 20))
+                                .bold()
+                        }
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.gray)
+                        .cornerRadius(8)
+                        
+                        Spacer()
+                        
+                        HStack {
+                            Image(systemName: "book.pages.fill")
+                            Text("Anotações")
+                                .font(.system(size: 20))
+                                .bold()
+                        }
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.gray)
+                        .cornerRadius(8)
                     }
-                    .foregroundColor(.white)
                     .padding()
-                    .background(Color.gray)
-                    .cornerRadius(8)
+                    AreaGridView()
+                    
+                    
                 }
-                .padding()
-                AreaGridView()
-                
-                
             }
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
+            
         }
-        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
         
+    }}
     
     
-}
 #Preview {
-    HomeView().modelContainer(for: Area.self)
+    HomeView().modelContainer(for: Note.self)
 }

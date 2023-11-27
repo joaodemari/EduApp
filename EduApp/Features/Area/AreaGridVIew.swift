@@ -10,44 +10,57 @@ import SwiftData
 import SwiftUI
 
 struct AreaGridView: View {
-    
+    @State var isPresented: Bool = false
     @Environment(\.modelContext) private var context
     @Query private var areas: [Area]
 
     let columns = [
         GridItem(.adaptive(minimum: 150))
-    ]
+        ]
+    
 
     var body: some View {
         HStack {
             Text("Subjects")
+                .foregroundColor(.white)
                 .font(.title)
                 .bold()
             Spacer()
+                .onTapGesture {
+                    isPresented = true
+                }
+                
             Button(action: {
-                addItem()
+                isPresented = true
             }, label:{
                 Image(systemName: "plus.circle.fill")
                     .foregroundColor(.green)
                     .imageScale(.large)
+            }).sheet(isPresented: $isPresented, content: {
+                HStack{
+                    Text("djidjsijda")
+                }
+                //AreaSheetView(area: area)
             })
             
         }
         .padding()
             LazyVGrid(columns: columns, spacing: 8) {
                 
-                ForEach(areas, id: \.self) { area in
-                    
-                    NavigationLink(destination: TimerView(area:area), label:{
-                        AreaCard(area: area)
-                            .background(area.color.getColor())
-                            .cornerRadius(8)
-                    })
-
-                }
+                    ForEach(areas, id: \.self) { area in
+                        
+                        NavigationLink(destination: TimerView(area:area), label:{
+                            AreaCard(area: area)
+                                .background(area.color.getColor())
+                                .cornerRadius(8)
+                        })
+                        
+                    }
+                
                 
             }
             .padding(.horizontal)
+ 
     }
     
     func addItem(){
