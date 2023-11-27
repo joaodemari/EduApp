@@ -29,7 +29,7 @@ final class Area: ObservableObject{
     }
     
     func addStudyDay() -> studyDay{
-        var studyDayFunc:studyDay = studyDay()
+        let studyDayFunc:studyDay = studyDay()
         studyDays.append(studyDayFunc)
         return studyDayFunc
     }

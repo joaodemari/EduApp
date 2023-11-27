@@ -16,8 +16,6 @@ struct NoteCard: View {
             Text("Note")
                 .font(.system(size: 20))
                 .bold()
-            Text(note.cycleToString())
-                .lineLimit(2)
             HStack {
                 Spacer()
                 Image(systemName: "play.fill")

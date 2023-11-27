@@ -27,7 +27,7 @@ struct NoteView: View {
             LazyVGrid(columns: columns, spacing: 8) {
                 ForEach(notes, id: \.self) { note in
                     NoteCard(note: note)
-                        .background(note.color.getColor())
+                        .background(note.color?.getColor())
                         .cornerRadius(8)
                 }
             }

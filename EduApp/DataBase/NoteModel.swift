@@ -14,18 +14,13 @@ final class Note: ObservableObject{
     var id = UUID()
     var date: Date?
     var area: Area?
-    var color: ColorApp
+    var color: ColorApp?
     var descript: String
     
-    init(id: UUID = UUID(), date: Date? = nil, area: Area? = nil, color: ColorApp, descript: String) {
+    init(id: UUID = UUID(), date: Date? = nil, color: ColorApp? = nil, descript: String) {
         self.id = id
         self.date = date
-        self.area = area
         self.color = color
         self.descript = descript
-    }
-    
-    func cycleToString() -> String {
-        return date?.description ?? ""
     }
 }
