@@ -1,12 +1,14 @@
 import SwiftUI
+import SwiftData
 
 struct TimerCircle: View {
     @StateObject var area : Area
     @State var breakTime = false
-    @State private var timeRemainingNumber = 6
+    @State private var timeRemainingNumber = 60
     @State private var timeRemaining = ""
-    @State var gradientColor : Color = .green
+    @State var gradientColor : Color
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @State var studyDayTimer : studyDay
     
 
     var body: some View {
@@ -45,15 +47,27 @@ struct TimerCircle: View {
             let minutes = timeRemainingNumber / 60
             let seconds = timeRemainingNumber % 60
             if(minutes == 0 && seconds == 0){
+                
                 breakTime.toggle()
                 timeRemainingNumber = breakTime
                                             ?5
-                                            :10
+                                            :60
+                if(breakTime){
+                    addMinutes(minutes: 60/60)
+                    print(area.studyDays)
+                }
+                
+                
             }
             timeRemaining = String(format: "%02d:%02d", minutes, seconds)
     }
+    
+    func addMinutes(minutes:Int ){
+        studyDayTimer.addMinutes(minutes: minutes)
+    }
+
 }
 
 #Preview{
-    HomeView()
+    HomeView().modelContainer(for: Area.self)
 }

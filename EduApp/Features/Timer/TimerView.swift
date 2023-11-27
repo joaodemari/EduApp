@@ -11,11 +11,11 @@ import SwiftData
 
 struct TimerView: View {
     
-    @EnvironmentObject var area: Area
+    var area: Area
 
     var body: some View {
         VStack{
-            TimerCircle(area:area)
+            TimerCircle(area:area, gradientColor:area.color.getColor(), studyDayTimer:area.addStudyDay())
             TimerPresent()
         }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity).background(Color.black)
     }
@@ -23,5 +23,5 @@ struct TimerView: View {
 
 
 #Preview{
-    TimerView()
+    TimerView(area:Area(name:"SwiftUI", color:.Blue))
 }

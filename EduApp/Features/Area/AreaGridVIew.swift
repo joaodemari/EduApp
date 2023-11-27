@@ -13,12 +13,11 @@ struct AreaGridView: View {
     @State var isPresented: Bool = false
     @Environment(\.modelContext) private var context
     @Query private var areas: [Area]
-    
-    let data = (1...100).map { "Item \($0)" }
 
     let columns = [
         GridItem(.adaptive(minimum: 150))
-    ]
+        ]
+    
 
     var body: some View {
         HStack {
@@ -47,13 +46,21 @@ struct AreaGridView: View {
         }
         .padding()
             LazyVGrid(columns: columns, spacing: 8) {
-                ForEach(areas, id: \.self) { area in
-                    AreaCard(area: area)
-                        .background(area.color.getColor())
-                        .cornerRadius(8)
-                }
+                
+                    ForEach(areas, id: \.self) { area in
+                        
+                        NavigationLink(destination: TimerView(area:area), label:{
+                            AreaCard(area: area)
+                                .background(area.color.getColor())
+                                .cornerRadius(8)
+                        })
+                        
+                    }
+                
+                
             }
             .padding(.horizontal)
+ 
     }
     
     func addItem(){

@@ -51,6 +51,5 @@ struct TimerToDo: View{
     }
 }
 
-#Preview{
-    TimerView()
-}
+//#Preview{
+//}
