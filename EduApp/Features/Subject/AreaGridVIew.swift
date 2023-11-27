@@ -16,38 +16,42 @@ struct AreaGridView: View {
 
     let columns = [
         GridItem(.adaptive(minimum: 150))
-    ]
+        ]
+    
 
     var body: some View {
-        HStack {
-            Text("Subjects")
-                .font(.title)
-                .bold()
-            Spacer()
-            Button(action: {
-                addItem()
-            }, label:{
-                Image(systemName: "plus.circle.fill")
-                    .foregroundColor(.green)
-                    .imageScale(.large)
-            })
-            
-        }
-        .padding()
+        
+            HStack {
+                Text("Subjects")
+                    .font(.title)
+                    .bold()
+                Spacer()
+                Button(action: {
+                    addItem()
+                }, label:{
+                    Image(systemName: "plus.circle.fill")
+                        .foregroundColor(.green)
+                        .imageScale(.large)
+                })
+                
+            }
+            .padding()
             LazyVGrid(columns: columns, spacing: 8) {
                 
-                ForEach(areas, id: \.self) { area in
-                    
-                    NavigationLink(destination: TimerView(area:area), label:{
-                        AreaCard(area: area)
-                            .background(area.color.getColor())
-                            .cornerRadius(8)
-                    })
-
-                }
+                    ForEach(areas, id: \.self) { area in
+                        
+                        NavigationLink(destination: TimerView(area:area), label:{
+                            AreaCard(area: area)
+                                .background(area.color.getColor())
+                                .cornerRadius(8)
+                        })
+                        
+                    }
+                
                 
             }
             .padding(.horizontal)
+ 
     }
     
     func addItem(){

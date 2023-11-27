@@ -16,6 +16,7 @@ final class Area: ObservableObject{
     var tasks: [String];
     var lastCycle: Date?
     var color: ColorApp
+    var studyDays : [studyDay] = []
     
     init(name: String, color: ColorApp) {
         self.name = name
@@ -25,6 +26,12 @@ final class Area: ObservableObject{
     
     func cycleToString() -> String {
         return lastCycle?.description ?? ""
+    }
+    
+    func addStudyDay() -> studyDay{
+        var studyDayFunc:studyDay = studyDay()
+        studyDays.append(studyDayFunc)
+        return studyDayFunc
     }
 }
 

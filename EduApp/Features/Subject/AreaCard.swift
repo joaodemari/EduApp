@@ -22,9 +22,20 @@ struct AreaCard: View {
             HStack {
                 Spacer()
                 Image(systemName: "play.fill")
+                Text("\(getStudyMinutes())")
             }
         }
         .foregroundColor(.black)
         .padding()
+    }
+    
+    func getStudyMinutes() -> Int{
+        var sum = 0
+        for studyDay in area.studyDays {
+            sum += studyDay.minutes
+            print(studyDay.minutes)
+        }
+        
+        return sum
     }
 }
