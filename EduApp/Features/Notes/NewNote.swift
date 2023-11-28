@@ -7,28 +7,41 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 struct NewNote: View {
     
-   
-    @State private var title = ""
-    @State private var notes = ""
+    
+    @State private var notesString = ""
     @State private var isSubscribed = false
     @FocusState private var isTextFieldFocused: Bool
+    @State private var selectedOption = 0
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) private var context
+    @Query private var areas: [Area]
     
     var body: some View {
         
         NavigationView {
             Form {
                 Section {
-                 
-                    TextField("Notes", text: $notes)
+                    TextField("Notes", text: $notesString)
                         .frame(height:100)
                 }
-                
-                
+                Section{
+                    Picker("sjjdsjkj", selection: $selectedOption){
+                        ForEach(areas){ area in
+                            HStack{
+                                Circle().fill(area.color.getColor()).frame(width: 30, height: 30)
+                                Text(area.name)
+                            }
+                                
+                            
+                        }
+                    }
+                    
+                    
+                }
             }
             
             .navigationTitle("Notes").background(.gray)
@@ -52,7 +65,6 @@ struct NewNote: View {
     }
     
     func addItem(){
-        let note = Note(color: .Red, descript: "Tirar o lixo")
-        context.insert(note)
+        let note = Note(color: .Red, descript: notesString)
     }
 }

@@ -9,8 +9,9 @@ import SwiftUI
 import SwiftData
 
 
-struct TimerPresent:View{
+struct TimerAddNote:View{
     @State var shouldPresentSheet = false
+    var notes:[Note]
     
     var body : some View{
         VStack {
@@ -28,6 +29,7 @@ struct TimerPresent:View{
                         } content: {
                             NewNote()
                                 .presentationDetents([.medium])
+                                .modelContainer(for: Area.self)
                         }
 
                 }
