@@ -21,12 +21,7 @@ struct NewNote: View {
         NavigationView {
             Form {
                 Section {
-                    TextField("Title", text: $title).focused($isTextFieldFocused)
-                        .onAppear {
-                            isTextFieldFocused = true
-                        }
-                    //.focused($isFocused)
-                    
+                 
                     TextField("Notes", text: $notes)
                         .frame(height:100)
                 }

@@ -17,7 +17,7 @@ struct TimerView: View {
         VStack{
             TimerCircle(area:area, gradientColor:area.color.getColor(), studyDayTimer:area.addStudyDay())
             TimerPresent()
-        }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity).background(Color.black)
+        }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
     }
 }
 
