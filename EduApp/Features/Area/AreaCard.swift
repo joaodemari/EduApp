@@ -14,19 +14,12 @@ struct AreaCard: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(area.name)
-                .font(.system(size: 20))
+                .font(.headline)
                 .bold()
-                
-            Text(area.cycleToString())
-                .lineLimit(2)
-            HStack {
-                Spacer()
-                Image(systemName: "play.fill")
-                Text("\(getStudyMinutes())")
-            }
+                .foregroundColor(.white)
         }
-        .foregroundColor(.black)
         .padding()
+        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .topLeading)
     }
     
     func getStudyMinutes() -> Int{
@@ -38,4 +31,7 @@ struct AreaCard: View {
         
         return sum
     }
+}
+#Preview{
+    HomeView().modelContainer(for: Area.self)
 }
