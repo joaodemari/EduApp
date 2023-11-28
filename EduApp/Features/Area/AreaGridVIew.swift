@@ -38,9 +38,10 @@ struct AreaGridView: View {
                     .imageScale(.large)
             }).sheet(isPresented: $isPresented, content: {
                 HStack{
-                    Text("djidjsijda")
+                    Text("New Area")
+                
                 }
-                //AreaSheetView(area: area)
+                AreaSheetView()
             })
             
         }

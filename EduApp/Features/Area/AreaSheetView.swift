@@ -10,14 +10,13 @@ import SwiftUI
 
 struct AreaSheetView: View {
     
-    var area: Area
+
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(area.name)
+            Text("Subject name")
                 .font(.system(size: 20))
                 .bold()
-            Text(area.cycleToString())
                 .lineLimit(2)
             HStack {
                 Spacer()

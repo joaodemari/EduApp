@@ -43,10 +43,24 @@ struct HomeView: View {
                         Spacer()
                         
                         HStack {
-                            Image(systemName: "book.pages.fill")
-                            Text("Anotações")
-                                .font(.system(size: 20))
-                                .bold()
+                            NavigationLink(destination: NoteView()) {
+                                ZStack {
+                                    Rectangle()
+                                        .foregroundColor(.clear)
+                                                .frame(width: 150, height: 40)
+                                                                .background(Color.blue)
+                                                                .cornerRadius(5)
+                                    ZStack {
+                                        HStack {
+                                            Image(systemName: "highlighter")
+                                            Text("Notes")
+                                                                        .font(.system(size: 20))
+                                                                        .bold()
+                                                                }
+                                        }
+                                    }
+                                }
+                            .navigationTitle("New Reminder")
                         }
                         .foregroundColor(.white)
                         .padding()
@@ -55,11 +69,9 @@ struct HomeView: View {
                     }
                     .padding()
                     AreaGridView()
-                    
-                    
                 }
             }
-            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             
         }
         
