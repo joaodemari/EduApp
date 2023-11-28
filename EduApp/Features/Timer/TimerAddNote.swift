@@ -18,15 +18,16 @@ struct TimerPresent:View{
                 shouldPresentSheet.toggle()
             }, label: {
                 HStack{
-                    Image(systemName: "plus.circle.fill").resizable().aspectRatio(contentMode:.fit).frame(height: 32)
-                    Text("Adicionar Lembrete").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                }.foregroundColor(.white)
+                    Image(systemName: "plus.circle.fill").resizable().aspectRatio(contentMode:.fit).frame(height: 32).foregroundColor(.green)
+                    Text("Add New Task").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                }.foregroundColor(.black)
                 
             })
                         .sheet(isPresented: $shouldPresentSheet) {
                             print("Sheet dismissed!")
                         } content: {
                             NewNote()
+                                .presentationDetents([.medium])
                         }
 
                 }

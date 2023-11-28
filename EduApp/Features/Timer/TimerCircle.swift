@@ -26,14 +26,14 @@ struct TimerCircle: View {
                 .frame(width: 350, height: 350)
 
             Circle()
-                .fill(.black)
+                .fill(.white)
                 .frame(width: 300, height: 300)
 
             Text("\(timeRemaining)")
                 .onReceive(timer) { _ in
                     minus1second()
                 }
-                .foregroundStyle(.white)
+                .foregroundStyle(.black)
                 .fontWeight(.bold)
                 .font(.system(size: 72))
         }
