@@ -9,12 +9,14 @@ import Foundation
 import SwiftUI
 
 struct NewNote: View {
-
+    
+   
     @State private var title = ""
     @State private var notes = ""
     @State private var isSubscribed = false
     @FocusState private var isTextFieldFocused: Bool
     @Environment(\.dismiss) var dismiss
+    @Environment(\.modelContext) private var context
     
     var body: some View {
         
@@ -33,7 +35,8 @@ struct NewNote: View {
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button("Add") {
-                        //
+                        addItem()
+                        dismiss()
                     }
                 }
                 ToolbarItem(placement: .cancellationAction) {
@@ -46,5 +49,10 @@ struct NewNote: View {
             
         }
         .background(.gray)
+    }
+    
+    func addItem(){
+        let note = Note(color: .Red, descript: "Tirar o lixo")
+        context.insert(note)
     }
 }

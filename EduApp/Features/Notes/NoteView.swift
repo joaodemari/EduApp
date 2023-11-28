@@ -33,7 +33,7 @@ struct NoteView: View {
             }
             .padding(.horizontal)
         }
-        .navigationTitle("Notes")
+        //.navigationTitle("Notes")
     }
         func addItem(){
             let note = Note(color: .Red, descript: "Português")
