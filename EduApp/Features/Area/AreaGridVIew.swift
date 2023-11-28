@@ -28,7 +28,7 @@ struct AreaGridView: View {
                 isPresented = true
             }, label:{
                 Image(systemName: "plus.circle.fill")
-                    .foregroundColor(.green)
+                    .foregroundColor(.gray)
                     .imageScale(.medium)
             }).sheet(isPresented: $isPresented, content: {
                 HStack{
