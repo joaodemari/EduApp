@@ -28,38 +28,47 @@ struct HomeView: View {
                             .frame(alignment: .leading)
                         ChartView()
                     }
-                    HStack {
-                        HStack {
-                            Image(systemName: "play")
-                            Text("New Cycle")
-                                .font(.system(size: 20))
-                                .bold()
-                        }
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.gray)
-                        .cornerRadius(8)
+                    
+                    
+                    HStack{
                         
-                        Spacer()
                         
-                        HStack {
-                            Image(systemName: "book.pages.fill")
-                            Text("Anotações")
-                                .font(.system(size: 20))
-                                .bold()
-                        }
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.gray)
-                        .cornerRadius(8)
+                            
+                                HStack {
+                                    Image(systemName: "play")
+                                    Text("New Cycle")
+                                        .font(.system(size: 20))
+                                        .bold()
+                                }
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight:.infinity)
+                                .background(Color.red)
+                                .cornerRadius(8)
+                            
+                            
+                    NavigationLink(destination: NoteView().modelContainer(for: Note.self)){
+                            HStack{
+                                Image(systemName: "book.pages.fill")
+                                Text("Notes")
+                                    .font(.system(size: 20))
+                                    .bold()
+                            }
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight:.infinity)
+                            .background(Color.black)
+                            .cornerRadius(8)
                     }
-                    .padding()
+                       
+                    }.padding()
+                    
                     AreaGridView()
                     
                     
                 }
             }
-            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
+            
             
         }
         
@@ -67,5 +76,5 @@ struct HomeView: View {
     
     
 #Preview {
-    HomeView().modelContainer(for: Note.self)
+    HomeView().modelContainer(for: Area.self)
 }

@@ -22,33 +22,25 @@ struct AreaGridView: View {
     var body: some View {
         HStack {
             Text("Subjects")
-                .foregroundColor(.white)
-                .font(.title)
+                .font(.title2)
                 .bold()
-            Spacer()
-                .onTapGesture {
-                    isPresented = true
-                }
-                
             Button(action: {
                 isPresented = true
             }, label:{
                 Image(systemName: "plus.circle.fill")
                     .foregroundColor(.green)
-                    .imageScale(.large)
+                    .imageScale(.medium)
             }).sheet(isPresented: $isPresented, content: {
                 HStack{
                     Text("djidjsijda")
                 }
-                //AreaSheetView(area: area)
             })
+            Spacer()
             
         }
         .padding()
             LazyVGrid(columns: columns, spacing: 8) {
-                
-                    ForEach(areas, id: \.self) { area in
-                        
+                ForEach(areas, id: \.self) { area in
                         NavigationLink(destination: TimerView(area:area), label:{
                             AreaCard(area: area)
                                 .background(area.color.getColor())
