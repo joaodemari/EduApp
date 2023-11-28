@@ -13,9 +13,8 @@ struct NoteCard: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Note")
+            Text(note.descript)
                 .font(.system(size: 20))
-                .bold()
             HStack {
                 Spacer()
                 Image(systemName: "play.fill")
@@ -24,3 +23,5 @@ struct NoteCard: View {
         .padding()
     }
 }
+
+

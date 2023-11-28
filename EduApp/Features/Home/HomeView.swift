@@ -60,7 +60,7 @@ struct HomeView: View {
                                         }
                                     }
                                 }
-                            .navigationTitle("New Reminder")
+                            .navigationTitle("Home")
                         }
                         .foregroundColor(.white)
                         .padding()
