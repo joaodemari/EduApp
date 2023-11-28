@@ -34,7 +34,7 @@ struct NewNote: View {
                 
             }
             
-            .navigationTitle("New Reminder").background(.gray)
+            .navigationTitle("Notes").background(.gray)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button("Add") {
