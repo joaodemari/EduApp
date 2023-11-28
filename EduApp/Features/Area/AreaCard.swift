@@ -8,18 +8,26 @@
 import SwiftUI
 
 struct AreaCard: View {
-    
+    var cycle : Bool = false
     var area: Area
     
     var body: some View {
-        VStack(alignment: .leading) {
+        HStack{
             Text(area.name)
                 .font(.headline)
                 .bold()
-                .foregroundColor(.white)
-        }
-        .padding()
-        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .topLeading)
+                
+            Spacer()
+            if(cycle){
+                NavigationLink(destination:TimerView(area: area)){
+                    Image(systemName: "play")
+                }
+                
+            }
+        }.foregroundColor(.white)
+            .padding()
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .topLeading)
+       
     }
     
     func getStudyMinutes() -> Int{
