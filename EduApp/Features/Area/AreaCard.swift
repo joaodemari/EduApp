@@ -49,5 +49,5 @@ struct AreaCard: View {
     }
 }
 #Preview{
-    HomeView().modelContainer(for: Area.self)
+    HomeView()
 }
