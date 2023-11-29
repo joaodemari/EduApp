@@ -68,6 +68,3 @@ struct TimerCircle: View {
 
 }
 
-#Preview{
-    HomeView().modelContainer(for: Area.self)
-}

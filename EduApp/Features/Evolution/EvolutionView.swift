@@ -10,25 +10,11 @@ import SwiftUI
 import SwiftData
 import Charts
 
-struct Day: Identifiable {
-    var date: Date
-    var hours: Int
-    var color: Color
-    var id = UUID()
-}
 
 
-extension Date {
-    static func from(year: Int, month: Int, day: Int) -> Date {
-        let components = DateComponents(year: year, month: month, day: day)
-        return Calendar.current.date(from: components)!
-    }
-}
 
 struct EvolutionView: View {
-    
-   
-    
+
     var body: some View {
         NavigationView {
             ScrollView {
@@ -130,9 +116,3 @@ struct EvolutionView: View {
     }
 }
 
-
-
-#Preview {
-    EvolutionView()
-        .modelContainer(for: Area.self, inMemory: true)
-}

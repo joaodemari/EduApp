@@ -8,30 +8,29 @@
 import SwiftUI
 import SwiftData
 
+var sharedModelContainer: ModelContainer = {
+    let schema = Schema([
+        Area.self, Note.self
+    ])
+    let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+
+    do {
+        return try ModelContainer(for: schema, configurations: [modelConfiguration])
+    } catch {
+        fatalError("Could not create ModelContainer: \(error)")
+    }
+}()
+
 @main
 struct EduAppApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Area.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-
     var body: some Scene {
         WindowGroup {
             HomeView()
-                .preferredColorScheme(.dark)
         }
         .modelContainer(sharedModelContainer)
     }
 }
 
 #Preview{
-    ContentView()
+        HomeView().modelContainer(sharedModelContainer)
 }
