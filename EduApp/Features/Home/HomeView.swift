@@ -1,6 +1,5 @@
 //
 //  ContentView.swift
-//  teste2educ
 //
 //  Created by Foundation10 on 21/11/23.
 //
@@ -9,7 +8,20 @@ import SwiftUI
 import SwiftData
 // trocar lastAcess p data
 
+
+class HomeViewModel: ObservableObject {
+    @Published var showSmallSheet = false
+    @Published var goToTimer = false
+    @Published var cicleSelected: Area = Area(name: "", color: ColorApp.Blue) {
+        didSet {
+            self.goToTimer = true
+            self.showSmallSheet = false
+        }
+    }
+}
+
 struct HomeView: View {
+    @StateObject var viewModel = HomeViewModel()
     
     var body: some View {
         NavigationStack{
@@ -30,20 +42,7 @@ struct HomeView: View {
                     }
                     HStack{
                         
-                        
-                        
-                        HStack {
-                            Image(systemName: "play")
-                            Text("New Cycle")
-                                .font(.system(size: 20))
-                                .bold()
-                        }
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight:.infinity)
-                        .background(Color.red)
-                        .cornerRadius(8)
-                        
+                        NewCycleButton(showSmallSheet: $viewModel.showSmallSheet)
                         
                         NavigationLink(destination: NoteView().modelContainer(for: Note.self)){
                             HStack{
@@ -53,7 +52,7 @@ struct HomeView: View {
                                     .bold()
                             }
                             .foregroundColor(.white)
-                            .padding()
+                            
                             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight:.infinity)
                             .background(Color.grayDark)
                             .cornerRadius(8)
@@ -64,8 +63,19 @@ struct HomeView: View {
                     AreaGridView()
                 }
             }
-            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             
+            .sheet(isPresented: $viewModel.showSmallSheet) {
+                print("Sheet dismissed!")
+            } content: {
+                AreaGridComponent(cycle: true)
+                    .environmentObject(viewModel)
+                    .presentationDetents([.medium])
+            }
+            
+            .navigationDestination(isPresented: $viewModel.goToTimer) {
+                TimerView(area: viewModel.cicleSelected)
+            }
         }
     }
         

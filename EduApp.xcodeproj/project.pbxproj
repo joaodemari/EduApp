@@ -11,6 +11,7 @@
 		684556F42B0F940600E128E3 /* HomeViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684556F32B0F940600E128E3 /* HomeViewHeader.swift */; };
 		684556F72B0F949400E128E3 /* AreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684556F62B0F949400E128E3 /* AreaViewModel.swift */; };
 		684556FB2B0F958400E128E3 /* AreaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684556FA2B0F958400E128E3 /* AreaCard.swift */; };
+		68E939E12B1628BF00E71F56 /* NewCycleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E939E02B1628BF00E71F56 /* NewCycleButton.swift */; };
 		6C66C2B12B0CE31700E22EAC /* EduAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66C2B02B0CE31700E22EAC /* EduAppApp.swift */; };
 		6C66C2B32B0CE31700E22EAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66C2B22B0CE31700E22EAC /* ContentView.swift */; };
 		6C66C2B52B0CE31700E22EAC /* AreaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66C2B42B0CE31700E22EAC /* AreaModel.swift */; };
@@ -38,6 +39,7 @@
 		684556F32B0F940600E128E3 /* HomeViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewHeader.swift; sourceTree = "<group>"; };
 		684556F62B0F949400E128E3 /* AreaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaViewModel.swift; sourceTree = "<group>"; };
 		684556FA2B0F958400E128E3 /* AreaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaCard.swift; sourceTree = "<group>"; };
+		68E939E02B1628BF00E71F56 /* NewCycleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCycleButton.swift; sourceTree = "<group>"; };
 		6C66C2AD2B0CE31700E22EAC /* EduApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EduApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C66C2B02B0CE31700E22EAC /* EduAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduAppApp.swift; sourceTree = "<group>"; };
 		6C66C2B22B0CE31700E22EAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 			path = Area;
 			sourceTree = "<group>";
 		};
+		68E939DF2B16289400E71F56 /* New Cycle */ = {
+			isa = PBXGroup;
+			children = (
+				68E939E02B1628BF00E71F56 /* NewCycleButton.swift */,
+			);
+			path = "New Cycle";
+			sourceTree = "<group>";
+		};
 		6C66C2A42B0CE31700E22EAC = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +146,7 @@
 				EB83B87A2B14C318003DC8A2 /* Notes */,
 				684556F52B0F948600E128E3 /* Area */,
 				684556F02B0F93C700E128E3 /* Home */,
+				68E939DF2B16289400E71F56 /* New Cycle */,
 				6C66C2C22B0CE36000E22EAC /* Timer */,
 				6C66C2C12B0CE34F00E22EAC /* Evolution */,
 			);
@@ -267,6 +278,7 @@
 				6C66C2B52B0CE31700E22EAC /* AreaModel.swift in Sources */,
 				6C66C2C42B0CE3BC00E22EAC /* EvolutionView.swift in Sources */,
 				684556F42B0F940600E128E3 /* HomeViewHeader.swift in Sources */,
+				68E939E12B1628BF00E71F56 /* NewCycleButton.swift in Sources */,
 				684556F72B0F949400E128E3 /* AreaViewModel.swift in Sources */,
 				6C66C3072B0F8D9B00E22EAC /* ColorApp.swift in Sources */,
 				EB83B8842B14E04D003DC8A2 /* NewNote.swift in Sources */,

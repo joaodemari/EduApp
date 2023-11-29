@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct AreaCard: View {
+    @EnvironmentObject var homeViewModel: HomeViewModel
+
     var cycle : Bool = false
     var area: Area
+    @State var jack: Bool = false
     
     var body: some View {
         HStack{
@@ -19,14 +22,19 @@ struct AreaCard: View {
                 
             Spacer()
             if(cycle){
-                NavigationLink(destination:TimerView(area: area)){
+                Button(action: {
+                    homeViewModel.cicleSelected = area
+                }, label: {
                     Image(systemName: "play")
-                }
+                })
+//                NavigationLink(destination:TimerView(area: area)){
+//                    Image(systemName: "play")
+//                }
                 
             }
         }.foregroundColor(.white)
             .padding()
-            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .topLeading)
+            .frame(maxWidth: .infinity, alignment: .topLeading)
        
     }
     
