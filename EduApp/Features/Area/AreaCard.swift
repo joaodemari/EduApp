@@ -26,7 +26,7 @@ struct AreaCard: View {
             }
         }.foregroundColor(.white)
             .padding()
-            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .topLeading)
+            .frame(maxWidth: .infinity, alignment: .topLeading)
        
     }
     

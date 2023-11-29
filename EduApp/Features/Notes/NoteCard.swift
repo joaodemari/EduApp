@@ -15,10 +15,9 @@ struct NoteCard: View {
         VStack(alignment: .leading) {
             Text(note.descript)
                 .font(.system(size: 20))
-            HStack {
-                Spacer()
-                Image(systemName: "play.fill")
-            }
+//            HStack {
+//                Image(systemName: "play.fill")
+//            }
         }
         .padding()
     }
