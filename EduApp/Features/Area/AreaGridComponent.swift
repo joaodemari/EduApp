@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 //
 //  AreaGridVIew.swift
 //  EduApp
@@ -36,7 +37,6 @@ struct AreaGridComponent: View {
                     }
             }
             .padding(.horizontal)
- 
     }
 }
 

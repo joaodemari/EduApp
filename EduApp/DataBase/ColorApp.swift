@@ -15,6 +15,11 @@ enum ColorApp:Codable, Hashable {
     case Red
     case Yellow
     case Orange
+    case Mint
+    case Cyan
+    case Indigo
+    case Pink
+    case Brown
     
     func getColor() -> Color {
         switch self {
@@ -30,6 +35,16 @@ enum ColorApp:Codable, Hashable {
             Color.yellow
         case .Orange:
             Color.orange
+        case .Mint:
+            Color.mint
+        case .Cyan:
+            Color.cyan
+        case .Indigo:
+            Color.indigo
+        case .Pink:
+            Color.pink
+        case .Brown:
+            Color.brown
         }
     }
 }
