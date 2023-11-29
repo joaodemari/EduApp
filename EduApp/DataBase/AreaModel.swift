@@ -17,6 +17,7 @@ final class Area: ObservableObject{
     var lastCycle: Date?
     var color: ColorApp
     var studyDays : [studyDay] = []
+    var notes:[Note] = []
     
     init(name: String, color: ColorApp) {
         self.name = name
@@ -34,4 +35,3 @@ final class Area: ObservableObject{
         return studyDayFunc
     }
 }
-
