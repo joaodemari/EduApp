@@ -15,7 +15,7 @@ struct NewNote: View {
     @State private var notesString = ""
     @State private var isSubscribed = false
     @FocusState private var isTextFieldFocused: Bool
-    @State private var selectedOption = 0
+    @State private var selectedAreaName = "none"
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) private var context
     @Query private var areas: [Area]
@@ -29,10 +29,9 @@ struct NewNote: View {
                         .frame(height:100)
                 }
                 Section{
-                    Picker("sjjdsjkj", selection: $selectedOption){
+                    Picker("sjjdsjkj", selection: $selectedAreaName){
                         ForEach(areas){ area in
                             HStack{
-                                Circle().fill(area.color.getColor()).frame(width: 30, height: 30)
                                 Text(area.name)
                             }
                                 
@@ -65,6 +64,20 @@ struct NewNote: View {
     }
     
     func addItem(){
-        let note = Note(color: .Red, descript: notesString)
+        if let area = getAreaByNome(nome: selectedAreaName){
+            let note = Note(color:area.color, descript: notesString)
+            context.insert(note)
+            area.notes.append(note)
+        }
+        
+    }
+    
+    func getAreaByNome(nome:String) -> Area?{
+        for area in areas {
+            if(area.name == nome){
+                return area
+            }
+        }
+        return nil
     }
 }

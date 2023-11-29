@@ -42,6 +42,4 @@ struct NoteView: View {
     
 }
 
-#Preview{
-    HomeView().modelContainer(for: Note.self)
-}
+

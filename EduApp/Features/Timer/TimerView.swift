@@ -21,7 +21,6 @@ struct TimerView: View {
     }
 }
 
-
-#Preview{
-    TimerView(area:Area(name:"SwiftUI", color:.Blue))
+#Preview {
+    TimerView(area: Area(name: "dsadsa", color: .Blue))
 }
