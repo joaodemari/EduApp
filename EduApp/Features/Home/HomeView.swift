@@ -44,7 +44,7 @@ struct HomeView: View {
                         
                         NewCycleButton(showSmallSheet: $viewModel.showSmallSheet)
                         
-                        NavigationLink(destination: NoteView().modelContainer(for: Note.self)){
+                        NavigationLink(destination: NoteView()){
                             HStack{
                                 Image(systemName: "book.pages.fill")
                                 Text("Notes")
@@ -82,6 +82,3 @@ struct HomeView: View {
     }
     
     
-#Preview {
-    HomeView().modelContainer(for: Area.self)
-}

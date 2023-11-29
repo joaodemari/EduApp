@@ -13,7 +13,6 @@ import SwiftUI
 final class Note: ObservableObject{
     var id = UUID()
     var date: Date?
-    var area: Area?
     var color: ColorApp?
     var descript: String
     
