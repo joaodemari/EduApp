@@ -72,7 +72,6 @@ struct HomeView: View {
                     .environmentObject(viewModel)
                     .presentationDetents([.medium])
             }
-            
             .navigationDestination(isPresented: $viewModel.goToTimer) {
                 TimerView(area: viewModel.cicleSelected)
             }
