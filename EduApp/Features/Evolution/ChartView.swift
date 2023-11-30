@@ -29,10 +29,7 @@ struct ChartView: View {
         }
         .chartXAxis(.visible)
         .chartXAxis {
-            AxisMarks(values: .automatic(desiredCount: 4)) {
-                AxisValueLabel()
-                    .foregroundStyle(.white)
-            }
+            AxisMarks(values: .automatic(desiredCount: 4))
         }
         
         .frame(width: 352, height: 200)

@@ -9,11 +9,9 @@ import SwiftUI
 
 struct HomeViewHeader: View {
     var body: some View {
-       
-            Spacer()
-            Image(systemName: "bell.fill")
-                .imageScale(.large)
-                .foregroundColor(.gray)
+        HStack{
+            Text("Tomy").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+        }.frame(maxWidth: .infinity, maxHeight: 50).padding()
             
         
         

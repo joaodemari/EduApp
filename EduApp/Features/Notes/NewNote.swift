@@ -15,7 +15,7 @@ struct NewNote: View {
     @State private var notesString = ""
     @State private var isSubscribed = false
     @FocusState private var isTextFieldFocused: Bool
-    @State private var selectedAreaName = "none"
+    @State private var selectedAreaName = "No Option"
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) private var context
     @Query private var areas: [Area]
@@ -28,20 +28,13 @@ struct NewNote: View {
                     TextField("Notes", text: $notesString)
                         .frame(height:100)
                 }
-                Section{
-                    Picker("sjjdsjkj", selection: $selectedAreaName){
-                        HStack{
-                            Text("nenhuma")
-                        }
-                        ForEach(areas){ area in
-                            HStack{
-                                Text(area.name)
-                            }
-                        }
-                    }
-                    
-                    
-                }
+                Section {
+                                    Picker("Area", selection: $selectedAreaName) {
+                                        ForEach(self.makeAreaSelection(), id: \.self) { area in
+                                            Text(area)
+                                        }
+                                    }
+                                }
             }
             
             .navigationTitle("Notes").background(.gray)
@@ -64,13 +57,23 @@ struct NewNote: View {
         .background(.gray)
     }
     
+    func makeAreaSelection() -> [String] {
+        var array = ["No Option"]
+        
+        for area in areas {
+            array.append(area.name)
+        }
+        
+        return array
+    }
+    
     func addItem(){
         if let area = getAreaByNome(nome: selectedAreaName){
             let note = Note(color:area.color, descript: notesString)
             context.insert(note)
             area.notes.append(note)
         } else{
-            let note = Note(color:.Brown, descript: notesString)
+            let note = Note(color:.Gray, descript: notesString)
             context.insert(note)
         }
     }

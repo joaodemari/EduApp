@@ -11,11 +11,10 @@ import SwiftData
 
 
 
-struct NoteView: View {
+struct NoteAreaSheet: View {
+
+    var area:Area
     
-    @Environment(\.modelContext) private var context
-    @Query private var areas: [Area]
-    @Query private var notes:[Note]
     
     let columns = [
         GridItem(.adaptive(minimum: 150))
@@ -24,7 +23,7 @@ struct NoteView: View {
     var body: some View {
         NavigationView {
             List{
-                ForEach(areas) { area in
+               
                     Section {
                         ForEach(area.notes){note in
                             Text(note.descript)
@@ -32,25 +31,10 @@ struct NoteView: View {
                     } header: {
                         Text(area.name)
                     }
-                }
-                Section {
-                    ForEach(notes){note in
-                        if(note.color == ColorApp.Gray){
-                            Text(note.descript)}
-                    }
-                } header: {
-                    Text("Extra Notes")
-                }
-                
-                
             }
             .navigationTitle("Notes")
             .listStyle(.insetGrouped)
         }
-    }
-    func addItem(){
-        let note = Note(color: .Red, descript: "Português")
-        context.insert(note)
     }
     
 }

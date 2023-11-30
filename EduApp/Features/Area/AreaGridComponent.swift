@@ -31,9 +31,9 @@ struct AreaGridComponent: View {
     var body: some View {
             LazyVGrid(columns: columns, spacing: 8) {
                 ForEach(areas, id: \.self) { area in
-                            AreaCard(cycle: cycle, area: area)
-                                .background(area.color.getColor())
-                                .cornerRadius(8)
+                    AreaCard(cycle: cycle, area: area)
+                        .background(area.color.getColor())
+                        .cornerRadius(8)
                     }
             }
             .padding(.horizontal)

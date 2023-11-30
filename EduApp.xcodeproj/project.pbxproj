@@ -12,6 +12,7 @@
 		684556FB2B0F958400E128E3 /* AreaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684556FA2B0F958400E128E3 /* AreaCard.swift */; };
 		68E939E12B1628BF00E71F56 /* NewCycleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E939E02B1628BF00E71F56 /* NewCycleButton.swift */; };
 		6C035AEB2B18BDE30018063C /* AreaSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C035AEA2B18BDE30018063C /* AreaSheetView.swift */; };
+		6C035AED2B193E800018063C /* NoteAreaSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C035AEC2B193E800018063C /* NoteAreaSheet.swift */; };
 		6C66C2B12B0CE31700E22EAC /* EduAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66C2B02B0CE31700E22EAC /* EduAppApp.swift */; };
 		6C66C2B32B0CE31700E22EAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66C2B22B0CE31700E22EAC /* ContentView.swift */; };
 		6C66C2B52B0CE31700E22EAC /* AreaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66C2B42B0CE31700E22EAC /* AreaModel.swift */; };
@@ -39,6 +40,7 @@
 		684556FA2B0F958400E128E3 /* AreaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaCard.swift; sourceTree = "<group>"; };
 		68E939E02B1628BF00E71F56 /* NewCycleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCycleButton.swift; sourceTree = "<group>"; };
 		6C035AEA2B18BDE30018063C /* AreaSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaSheetView.swift; sourceTree = "<group>"; };
+		6C035AEC2B193E800018063C /* NoteAreaSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAreaSheet.swift; sourceTree = "<group>"; };
 		6C66C2AD2B0CE31700E22EAC /* EduApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EduApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C66C2B02B0CE31700E22EAC /* EduAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduAppApp.swift; sourceTree = "<group>"; };
 		6C66C2B22B0CE31700E22EAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				EB83B87B2B14C331003DC8A2 /* NoteView.swift */,
 				EB83B8832B14E04D003DC8A2 /* NewNote.swift */,
+				6C035AEC2B193E800018063C /* NoteAreaSheet.swift */,
 				EB83B87F2B14C5EA003DC8A2 /* NoteCard.swift */,
 			);
 			path = Notes;
@@ -264,6 +267,7 @@
 				684556FB2B0F958400E128E3 /* AreaCard.swift in Sources */,
 				EB83B8822B14D7F9003DC8A2 /* AddAreaSheet.swift in Sources */,
 				684556F22B0F93DD00E128E3 /* HomeView.swift in Sources */,
+				6C035AED2B193E800018063C /* NoteAreaSheet.swift in Sources */,
 				6C66C2C62B0CE42400E22EAC /* TimerView.swift in Sources */,
 				6C66C2C82B0CE96900E22EAC /* TimerCircle.swift in Sources */,
 				6C66C2B32B0CE31700E22EAC /* ContentView.swift in Sources */,

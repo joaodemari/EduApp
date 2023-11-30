@@ -16,7 +16,7 @@ final class Note: ObservableObject{
     var color: ColorApp?
     var descript: String
     
-    init(id: UUID = UUID(), date: Date? = nil, color: ColorApp? = nil, descript: String) {
+    init(id: UUID = UUID(), date: Date? = nil, color: ColorApp? = .Gray, descript: String) {
         self.id = id
         self.date = date
         self.color = color
