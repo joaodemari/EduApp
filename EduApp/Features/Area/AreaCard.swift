@@ -12,27 +12,27 @@ struct AreaCard: View {
 
     var cycle : Bool = false
     var area: Area
-    @State var jack: Bool = false
     
     var body: some View {
-        HStack{
-            Text(area.name)
-                .font(.headline)
-                .bold()
-                
-            Spacer()
-            if(cycle){
-                Button(action: {
+            Button {
+                if cycle {
                     homeViewModel.cicleSelected = area
-                }, label: {
-                    Image(systemName: "play")
-                })
-//                NavigationLink(destination:TimerView(area: area)){
-//                    Image(systemName: "play")
-//                }
-                
+                } else {
+                    homeViewModel.areaSelected = area
+                }
+            } label: {
+                HStack{
+                    Text(area.name)
+                        .font(.headline)
+                        .bold()
+                        
+                    Spacer()
+                    if(cycle){
+                        Image(systemName: "play")
+                    }
             }
-        }.foregroundColor(.white)
+        }
+        .foregroundColor(.white)
             .padding()
             .frame(maxWidth: .infinity, alignment: .topLeading)
        

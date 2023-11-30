@@ -20,9 +20,12 @@ enum ColorApp:Codable, Hashable {
     case Indigo
     case Pink
     case Brown
+    case Gray
     
     func getColor() -> Color {
         switch self {
+        case .Gray:
+            Color.gray
         case .Green:
             Color.green
         case .Blue:

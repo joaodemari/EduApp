@@ -14,35 +14,50 @@ import SwiftData
 struct NoteView: View {
     
     @Environment(\.modelContext) private var context
-    @Query private var notes: [Note]
+    @Query private var areas: [Area]
+    @Query private var notes:[Note]
     
-    let data = (1...100).map { "Item \($0)" }
-
     let columns = [
         GridItem(.adaptive(minimum: 150))
     ]
     
     var body: some View {
-        if(notes.isEmpty) {
+         if(notes.isEmpty) {
             Text("No notes yet")
                 .font(.title).bold()
         } else {
-            NavigationView {
-                LazyVGrid(columns: columns, spacing: 8) {
-                    ForEach(notes, id: \.self) { note in
-                        NoteCard(note: note)
-                            .background(note.color?.getColor())
-                            .cornerRadius(8)
+        NavigationView {
+            List{
+                ForEach(areas) { area in
+                    Section {
+                        ForEach(area.notes){note in
+                            Text(note.descript)
+                        }
+                    } header: {
+                        Text(area.name)
                     }
                 }
-                .padding(.horizontal)
+                Section {
+                    ForEach(notes){note in
+                        if(note.color == ColorApp.Gray){
+                            Text(note.descript)}
+                    }
+                } header: {
+                    Text("Extra Notes")
+                }
+                
+                
             }
+            .navigationTitle("Notes")
+            .listStyle(.insetGrouped)
         }
+        }
+
     }
-        func addItem(){
-            let note = Note(color: .Red, descript: "Português")
-            context.insert(note)
-        }
+    func addItem(){
+        let note = Note(color: .Red, descript: "Português")
+        context.insert(note)
+    }
     
 }
 

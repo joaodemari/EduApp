@@ -11,7 +11,6 @@ import SwiftData
 
 struct TimerAddNote:View{
     @State var shouldPresentSheet = false
-    var notes:[Note]
     
     var body : some View{
         VStack {
@@ -32,8 +31,7 @@ struct TimerAddNote:View{
                                 .modelContainer(for: Area.self)
                         }
 
-                }
-                    .padding()
+                }.padding()
     }
 }
 
