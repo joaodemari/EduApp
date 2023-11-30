@@ -95,36 +95,47 @@ struct ChartView: View {
                 .opacity(0.3)
             } else {
                 Chart {
-                    
-                    ForEach(areas) {area in
-                        ForEach(area.studyDays){ studyDay in
-                           
-                            BarMark(
-                                x: .value("Category", studyDay.day, unit: .day),
-                                y: .value("Value", studyDay.minutes)
-                            )
-                            .foregroundStyle(area.color.getColor().gradient)
+                    ForEach(1...Date.daysInCurrentMonth(), id: \.self) { day in
+                        ForEach(areas) { area in
+                            let studyDay = area.studyDays.first(where: { Calendar.current.component(.day, from: $0.day) == day })
                             
+                            if let unwrappedStudyDay = studyDay {
+                                BarMark(x: .value("Category", unwrappedStudyDay.day, unit: .day),
+                                        y: .value("Value", unwrappedStudyDay.minutes))
+                                //                                    BarMark(
+                                //                                        x: .value("Category", studyDay.day, unit: .day),
+                                //                                        y: .value("Value", Double(studyDay.minutes))
+                                //                                    )
+                                //                                    .foregroundStyle(area.color.getColor().gradient)
+                            } else {
+                                BarMark(x: .value("Category", Date(), unit: .day),
+                                        y: .value("Value", 0))
+                                //                                    BarMark(
+                                //                                        x: .value("Category", studyDay.day, unit: .day),
+                                //                                        y: .value("Value", 0)
+                                //                                    )
+                                //                                    .foregroundStyle(.gray)
+                            }
                         }
                     }
                 }
-               
                 
-                .chartXAxis {
-                    AxisMarks(values: .automatic(desiredCount: 6)) {
-                        AxisValueLabel(format: .dateTime.day())
-                            
-                    }
-                }
-                .chartYScale(domain: 0...30)
-//                .chartXScale(domain: 0...30)
-//                .chartXAxis(.visible)
-                .frame(width: 352, height: 200)
-                //.background(Color.yellow)
             }
+            //                .chartXAxis {
+            //                    AxisMarks(values: .automatic(desiredCount: 6)) {
+            //                        AxisValueLabel(format: .dateTime.day())
+            //
+            //                    }
+            //                }
+            //                .chartYScale(domain: 0...30)
+            //                .frame(width: 352, height: 200)
+            //                .chartXScale(domain: 0...30)
+            //                .chartXAxis(.visible)
+            //.background(Color.yellow)
         }
     }
 }
+//}
 
 
 

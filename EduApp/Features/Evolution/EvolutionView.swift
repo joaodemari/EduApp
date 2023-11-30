@@ -34,23 +34,23 @@ struct EvolutionView: View {
                             )
                             .cornerRadius(308)
                         Circle()
-                            .fill(.black)
+                            .fill(.white)
                             .frame(width: 260, height: 260)
                         VStack {
                             Text("45")
                             
                                 .font(.system(size: 112).bold())
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                             Text("days")
                                 .font(.largeTitle.bold())
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                         }
                     }
                     .padding(.horizontal,48)
                     VStack (alignment: .leading) {
                         Text("Last Month")
                             .font(.title.bold())
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                         ChartView()
                             .padding(.trailing, 36)
                             .padding(.bottom, 8)
@@ -59,7 +59,7 @@ struct EvolutionView: View {
                     VStack (alignment: .leading) {
                         Text("Weekly Hours")
                             .font(.title.bold())
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                         VStack {
                             HStack{
                                 Circle()
@@ -71,7 +71,7 @@ struct EvolutionView: View {
                                 Text("5")
                                     .font(.title2.bold())
                             }
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                             .padding(.bottom, 12)
                             HStack{
                                 Circle()
@@ -83,7 +83,7 @@ struct EvolutionView: View {
                                 Text("3")
                                     .font(.title2.bold())
                             }
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                             .padding(.bottom, 12)
                             HStack{
                                 Circle()
@@ -95,12 +95,12 @@ struct EvolutionView: View {
                                 Text("7")
                                     .font(.title2.bold())
                             }
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                         }
                         .padding(.trailing, 36)
                         .padding(.top, 8)
                         .padding(.bottom, 24)
-                        .background(.black)
+                        .background(.white)
                         .cornerRadius(16)
                     }
                     .padding(.leading, 36)
@@ -108,7 +108,7 @@ struct EvolutionView: View {
                 .padding(.horizontal, 24)
                 .padding(.top, 100)
                 .padding(.bottom, 24)
-                .background(.black)
+                .background(.white)
                 .cornerRadius(16)
             }
         }

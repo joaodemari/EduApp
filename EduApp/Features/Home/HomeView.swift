@@ -39,34 +39,44 @@ struct HomeView: View {
                 HomeViewHeader()
                 
                 VStack {
-                    
-                    VStack(alignment: .leading) {
-                        
-                        Text("My Evolution")
-                            .font(.title)
-                            .bold()
-                            .frame(alignment: .leading)
-                        ChartView()
-                    }
-                    HStack{
-                        
-                        NewCycleButton(showSmallSheet: $viewModel.showSmallSheet)
-                        
-                        NavigationLink(destination: NoteView()){
-                            HStack{
-                                Image(systemName: "book.pages.fill")
-                                Text("Notes")
-                                    .font(.system(size: 20))
-                                    .bold()
+                    ZStack {
+                        Rectangle()
+                            .foregroundStyle(.white.gradient)
+                            .opacity(0.4)
+                        VStack {
+                            NavigationLink(destination: EvolutionView()){
+                                VStack(alignment: .leading) {
+                                    
+                                    Text("My Evolution")
+                                        .foregroundColor(.black)
+                                        .font(.title)
+                                        .bold()
+                                        .frame(alignment: .leading)
+                                    ChartView()
+                                }
                             }
-                            .foregroundColor(.white)
-                            
-                            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight:.infinity)
-                            .background(Color.grayDark)
-                            .cornerRadius(8)
+                            HStack{
+                                
+                                NewCycleButton(showSmallSheet: $viewModel.showSmallSheet)
+                                
+                                NavigationLink(destination: NoteView()){
+                                    HStack{
+                                        Image(systemName: "book.pages.fill")
+                                        Text("Notes")
+                                            .font(.system(size: 20))
+                                            .bold()
+                                    }
+                                    .foregroundColor(.white)
+                                    
+                                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight:.infinity)
+                                    .background(Color.grayDark)
+                                    .cornerRadius(8)
+                                }
+                                
+                            }
+                            .padding()
                         }
-                        
-                    }.padding()
+                    }
                     
                     AreaGridView()
                         .environmentObject(viewModel)
