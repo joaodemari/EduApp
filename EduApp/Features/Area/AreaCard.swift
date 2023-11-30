@@ -27,9 +27,7 @@ struct AreaCard: View {
                 }, label: {
                     Image(systemName: "play")
                 })
-//                NavigationLink(destination:TimerView(area: area)){
-//                    Image(systemName: "play")
-//                }
+            }else{
                 
             }
         }.foregroundColor(.white)

@@ -29,7 +29,7 @@ struct AreaGridView: View {
                     .foregroundColor(.gray)
                     .imageScale(.medium)
             }).sheet(isPresented: $isPresented, content: {
-                AreaSheetView().modelContainer(for: Area.self)
+                AddAreaSheet().modelContainer(for: Area.self)
             })
             Spacer()
             

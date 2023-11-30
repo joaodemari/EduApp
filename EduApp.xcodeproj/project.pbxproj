@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		684556F22B0F93DD00E128E3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684556F12B0F93DD00E128E3 /* HomeView.swift */; };
 		684556F42B0F940600E128E3 /* HomeViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684556F32B0F940600E128E3 /* HomeViewHeader.swift */; };
-		684556F72B0F949400E128E3 /* AreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684556F62B0F949400E128E3 /* AreaViewModel.swift */; };
 		684556FB2B0F958400E128E3 /* AreaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684556FA2B0F958400E128E3 /* AreaCard.swift */; };
 		68E939E12B1628BF00E71F56 /* NewCycleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E939E02B1628BF00E71F56 /* NewCycleButton.swift */; };
+		6C035AEB2B18BDE30018063C /* AreaSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C035AEA2B18BDE30018063C /* AreaSheetView.swift */; };
 		6C66C2B12B0CE31700E22EAC /* EduAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66C2B02B0CE31700E22EAC /* EduAppApp.swift */; };
 		6C66C2B32B0CE31700E22EAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66C2B22B0CE31700E22EAC /* ContentView.swift */; };
 		6C66C2B52B0CE31700E22EAC /* AreaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66C2B42B0CE31700E22EAC /* AreaModel.swift */; };
@@ -29,16 +29,16 @@
 		EB83B87C2B14C331003DC8A2 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83B87B2B14C331003DC8A2 /* NoteView.swift */; };
 		EB83B87E2B14C4D9003DC8A2 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83B87D2B14C4D9003DC8A2 /* NoteModel.swift */; };
 		EB83B8802B14C5EA003DC8A2 /* NoteCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83B87F2B14C5EA003DC8A2 /* NoteCard.swift */; };
-		EB83B8822B14D7F9003DC8A2 /* AreaSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83B8812B14D7F9003DC8A2 /* AreaSheetView.swift */; };
+		EB83B8822B14D7F9003DC8A2 /* AddAreaSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83B8812B14D7F9003DC8A2 /* AddAreaSheet.swift */; };
 		EB83B8842B14E04D003DC8A2 /* NewNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83B8832B14E04D003DC8A2 /* NewNote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		684556F12B0F93DD00E128E3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		684556F32B0F940600E128E3 /* HomeViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewHeader.swift; sourceTree = "<group>"; };
-		684556F62B0F949400E128E3 /* AreaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaViewModel.swift; sourceTree = "<group>"; };
 		684556FA2B0F958400E128E3 /* AreaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaCard.swift; sourceTree = "<group>"; };
 		68E939E02B1628BF00E71F56 /* NewCycleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCycleButton.swift; sourceTree = "<group>"; };
+		6C035AEA2B18BDE30018063C /* AreaSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaSheetView.swift; sourceTree = "<group>"; };
 		6C66C2AD2B0CE31700E22EAC /* EduApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EduApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C66C2B02B0CE31700E22EAC /* EduAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduAppApp.swift; sourceTree = "<group>"; };
 		6C66C2B22B0CE31700E22EAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 		EB83B87B2B14C331003DC8A2 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		EB83B87D2B14C4D9003DC8A2 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		EB83B87F2B14C5EA003DC8A2 /* NoteCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCard.swift; sourceTree = "<group>"; };
-		EB83B8812B14D7F9003DC8A2 /* AreaSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaSheetView.swift; sourceTree = "<group>"; };
+		EB83B8812B14D7F9003DC8A2 /* AddAreaSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAreaSheet.swift; sourceTree = "<group>"; };
 		EB83B8832B14E04D003DC8A2 /* NewNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,11 +84,11 @@
 		684556F52B0F948600E128E3 /* Area */ = {
 			isa = PBXGroup;
 			children = (
-				684556F62B0F949400E128E3 /* AreaViewModel.swift */,
 				684556FA2B0F958400E128E3 /* AreaCard.swift */,
 				6C66C3082B10D47B00E22EAC /* AreaGridVIew.swift */,
 				6C66C30C2B16252D00E22EAC /* AreaGridComponent.swift */,
-				EB83B8812B14D7F9003DC8A2 /* AreaSheetView.swift */,
+				EB83B8812B14D7F9003DC8A2 /* AddAreaSheet.swift */,
+				6C035AEA2B18BDE30018063C /* AreaSheetView.swift */,
 			);
 			path = Area;
 			sourceTree = "<group>";
@@ -262,7 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				684556FB2B0F958400E128E3 /* AreaCard.swift in Sources */,
-				EB83B8822B14D7F9003DC8A2 /* AreaSheetView.swift in Sources */,
+				EB83B8822B14D7F9003DC8A2 /* AddAreaSheet.swift in Sources */,
 				684556F22B0F93DD00E128E3 /* HomeView.swift in Sources */,
 				6C66C2C62B0CE42400E22EAC /* TimerView.swift in Sources */,
 				6C66C2C82B0CE96900E22EAC /* TimerCircle.swift in Sources */,
@@ -276,13 +276,13 @@
 				6C66C2C42B0CE3BC00E22EAC /* EvolutionView.swift in Sources */,
 				684556F42B0F940600E128E3 /* HomeViewHeader.swift in Sources */,
 				68E939E12B1628BF00E71F56 /* NewCycleButton.swift in Sources */,
-				684556F72B0F949400E128E3 /* AreaViewModel.swift in Sources */,
 				6C66C3072B0F8D9B00E22EAC /* ColorApp.swift in Sources */,
 				EB83B8842B14E04D003DC8A2 /* NewNote.swift in Sources */,
 				6C66C2B12B0CE31700E22EAC /* EduAppApp.swift in Sources */,
 				6C66C30B2B14C7AF00E22EAC /* studyDay.swift in Sources */,
 				6C66C30D2B16252D00E22EAC /* AreaGridComponent.swift in Sources */,
 				EB83B8802B14C5EA003DC8A2 /* NoteCard.swift in Sources */,
+				6C035AEB2B18BDE30018063C /* AreaSheetView.swift in Sources */,
 				6C66C2CA2B0CF8E700E22EAC /* TimerAddNote.swift in Sources */,
 				6C66C3092B10D47B00E22EAC /* AreaGridVIew.swift in Sources */,
 			);

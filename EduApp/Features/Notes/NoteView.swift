@@ -15,8 +15,6 @@ struct NoteView: View {
     
     @Environment(\.modelContext) private var context
     @Query private var notes: [Note]
-    
-    let data = (1...100).map { "Item \($0)" }
 
     let columns = [
         GridItem(.adaptive(minimum: 150))
@@ -24,16 +22,17 @@ struct NoteView: View {
     
     var body: some View {
         NavigationView {
-            LazyVGrid(columns: columns, spacing: 8) {
-                ForEach(notes, id: \.self) { note in
-                    NoteCard(note: note)
-                        .background(note.color?.getColor())
-                        .cornerRadius(8)
-                }
-            }
-            .padding(.horizontal)
+            List(notes, id: \.self) { note in
+                Text(note.descript)
+                    .swipeActions {
+                                Button("Order") {
+                                    print("Awesome!")
+                                }
+                                .tint(.green)
+                            }
+            }.listStyle(.insetGrouped)
+                
         }
-        //.navigationTitle("Notes")
     }
         func addItem(){
             let note = Note(color: .Red, descript: "Português")

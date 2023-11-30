@@ -30,12 +30,13 @@ struct NewNote: View {
                 }
                 Section{
                     Picker("sjjdsjkj", selection: $selectedAreaName){
+                        HStack{
+                            Text("nenhuma")
+                        }
                         ForEach(areas){ area in
                             HStack{
                                 Text(area.name)
                             }
-                                
-                            
                         }
                     }
                     
@@ -68,8 +69,10 @@ struct NewNote: View {
             let note = Note(color:area.color, descript: notesString)
             context.insert(note)
             area.notes.append(note)
+        } else{
+            let note = Note(color:.Brown, descript: notesString)
+            context.insert(note)
         }
-        
     }
     
     func getAreaByNome(nome:String) -> Area?{
