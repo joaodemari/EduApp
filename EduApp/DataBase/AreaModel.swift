@@ -25,6 +25,13 @@ final class Area: ObservableObject{
         self.color = color
     }
     
+    init(name: String, color: ColorApp, studyDays: [studyDay]) {
+        self.name = name
+        self.studyDays = studyDays
+        self.color = color
+        self.tasks = []
+    }
+    
     func cycleToString() -> String {
         return lastCycle?.description ?? ""
     }

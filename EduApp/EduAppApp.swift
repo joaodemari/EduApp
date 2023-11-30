@@ -23,14 +23,28 @@ var sharedModelContainer: ModelContainer = {
 
 @main
 struct EduAppApp: App {
+    @State private var dataLoaded = false
+    
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            if !dataLoaded {
+                            LoadingView()
+                                .onAppear {
+                                    // Simulate data loading for 2 seconds
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                                        // Once data is loaded, set dataLoaded to true
+                                        dataLoaded = true
+                                    }
+                                }
+                        } else {
+                            HomeView()
+                                .modelContainer(sharedModelContainer)
+                        }
         }
         .modelContainer(sharedModelContainer)
     }
 }
 
 #Preview{
-        HomeView().modelContainer(sharedModelContainer)
+    HomeView().modelContainer(sharedModelContainer)
 }

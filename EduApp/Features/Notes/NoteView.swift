@@ -23,17 +23,21 @@ struct NoteView: View {
     ]
     
     var body: some View {
-        NavigationView {
-            LazyVGrid(columns: columns, spacing: 8) {
-                ForEach(notes, id: \.self) { note in
-                    NoteCard(note: note)
-                        .background(note.color?.getColor())
-                        .cornerRadius(8)
+        if(notes.isEmpty) {
+            Text("No notes yet")
+                .font(.title).bold()
+        } else {
+            NavigationView {
+                LazyVGrid(columns: columns, spacing: 8) {
+                    ForEach(notes, id: \.self) { note in
+                        NoteCard(note: note)
+                            .background(note.color?.getColor())
+                            .cornerRadius(8)
+                    }
                 }
+                .padding(.horizontal)
             }
-            .padding(.horizontal)
         }
-        //.navigationTitle("Notes")
     }
         func addItem(){
             let note = Note(color: .Red, descript: "Português")

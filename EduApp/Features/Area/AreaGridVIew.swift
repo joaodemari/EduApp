@@ -11,7 +11,7 @@ import SwiftUI
 
 struct AreaGridView: View {
     @State var isPresented: Bool = false
-
+    @Query private var areas: [Area]
     let columns = [
         GridItem(.adaptive(minimum: 150))
         ]
@@ -35,8 +35,11 @@ struct AreaGridView: View {
             
         }
         .padding()
-        AreaGridComponent()
- 
+        if(areas.isEmpty){
+            Text("No subjects yet")
+        } else {
+            AreaGridComponent()
+        }
     }
 }
 

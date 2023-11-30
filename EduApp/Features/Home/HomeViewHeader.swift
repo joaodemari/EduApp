@@ -11,9 +11,9 @@ struct HomeViewHeader: View {
     var body: some View {
        
             Spacer()
-            Image(systemName: "bell.fill")
-                .imageScale(.large)
-                .foregroundColor(.gray)
+//            Image(systemName: "bell.fill")
+//                .imageScale(.large)
+//                .foregroundColor(.gray)
             
         
         
