@@ -36,47 +36,45 @@ struct HomeView: View {
         NavigationStack{
             ScrollView {
                 
-                HomeViewHeader()
                 
                 VStack {
                     ZStack {
                         Rectangle()
                             .foregroundStyle(.white.gradient)
                             .opacity(0.4)
-                        VStack {
-                            NavigationLink(destination: EvolutionView()){
-                                VStack(alignment: .leading) {
-                                    
-                                    Text("My Evolution")
-                                        .foregroundColor(.black)
-                                        .font(.title)
-                                        .bold()
-                                        .frame(alignment: .leading)
-                                    ChartView()
-                                }
-                            }
+                        VStack(alignment: .leading) {
+                            
                             HStack{
                                 
-                                NewCycleButton(showSmallSheet: $viewModel.showSmallSheet)
-                                
-                                NavigationLink(destination: NoteView()){
-                                    HStack{
-                                        Image(systemName: "book.pages.fill")
-                                        Text("Notes")
-                                            .font(.system(size: 20))
-                                            .bold()
-                                    }
-                                    .foregroundColor(.white)
-                                    
-                                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight:.infinity)
-                                    .background(Color.grayDark)
-                                    .cornerRadius(8)
-                                }
-                                
-                            }
-                            .padding()
+                                Text("My Evolution")
+                                    .font(.title)
+                                    .bold()
+                                    .frame(alignment: .leading)
+                                Spacer()
+                                Image("happy-tomy").resizable().scaledToFit().frame(maxHeight: 40)
+                            }.padding()
+                            NavigationLink(destination: EvolutionView(), label: {ChartView().padding(EdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 0))})
                         }
                     }
+                    HStack{
+                                            
+                                            NewCycleButton(showSmallSheet: $viewModel.showSmallSheet)
+                                            
+                                            NavigationLink(destination: NoteView()){
+                                                HStack{
+                                                    Image(systemName: "book.pages.fill")
+                                                    Text("Notes")
+                                                        .font(.system(size: 20))
+                                                        .bold()
+                                                }
+                                                .foregroundColor(.white)
+                                                
+                                                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight:.infinity)
+                                                .background(Color.grayDark)
+                                                .cornerRadius(8)
+                                            }
+                                            
+                                        }.padding()
                     
                     AreaGridView()
                         .environmentObject(viewModel)

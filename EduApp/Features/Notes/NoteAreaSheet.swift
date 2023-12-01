@@ -28,12 +28,12 @@ struct NoteAreaSheet: View {
                         ForEach(area.notes){note in
                             Text(note.descript)
                         }
-                    } header: {
-                        Text(area.name)
                     }
-            }
-            .navigationTitle("Notes")
-            .listStyle(.insetGrouped)
+                
+                
+            
+            }.navigationTitle(area.name)
+        
         }
     }
     

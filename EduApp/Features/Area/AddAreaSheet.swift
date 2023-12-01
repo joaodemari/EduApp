@@ -58,7 +58,7 @@ struct AddAreaSheet: View {
                 
             }
             
-            .navigationTitle("New Subject").background(.gray)
+            .navigationTitle("New Area").background(.gray)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button("Add") {

@@ -4,7 +4,7 @@ import SwiftData
 struct TimerCircle: View {
     @StateObject var area : Area
     @State var breakTime = false
-    @State private var timeRemainingNumber = 60
+    @State private var timeRemainingNumber = 1500
     @State private var timeRemaining = ""
     @State var gradientColor : Color
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -50,8 +50,8 @@ struct TimerCircle: View {
                 
                 breakTime.toggle()
                 timeRemainingNumber = breakTime
-                                            ?5
-                                            :60
+                                            ?300
+                                            :1500
                 if(breakTime){
                     addMinutes(minutes: 60/60)
                     print(area.studyDays)

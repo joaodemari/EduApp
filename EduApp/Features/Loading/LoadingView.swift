@@ -16,7 +16,7 @@ struct LoadingView: View {
                 .ignoresSafeArea()
                 .foregroundStyle(Color("TomyColor"))
                 .opacity(0.91)
-            Image("TomyLoad")
+            Image("loading-icon")
                 .resizable()
                 .frame(width: 300, height: 300)
                 .scaledToFit()

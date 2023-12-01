@@ -72,7 +72,7 @@ struct ChartView: View {
     
     var body: some View {
         VStack {
-            if studyDays.isEmpty {
+            if studyDays.count > 0 {
                 Chart {
                     ForEach(empty) { area in
                         ForEach(area.studyDays) { studyDay in
@@ -92,7 +92,7 @@ struct ChartView: View {
                     }
                 }
                 .frame(width: 352, height: 200)
-                .opacity(0.3)
+        
             } else {
                 Chart {
                     ForEach(1...Date.daysInCurrentMonth(), id: \.self) { day in

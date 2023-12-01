@@ -19,7 +19,7 @@ struct AreaGridView: View {
 
     var body: some View {
         HStack {
-            Text("Subjects")
+            Text("Areas")
                 .font(.title2)
                 .bold()
             Button(action: {
@@ -36,7 +36,7 @@ struct AreaGridView: View {
         }
         .padding()
         if(areas.isEmpty){
-            Text("No subjects yet")
+            Text("No areas yet")
         } else {
             AreaGridComponent()
         }

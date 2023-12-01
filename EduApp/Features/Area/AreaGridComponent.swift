@@ -20,6 +20,13 @@ struct AreaGridComponent: View {
     
 
     var body: some View {
+        
+        if(cycle){
+            HStack{
+                Text("Select a Cycle").font(.title3).fontWeight(.semibold)
+                Spacer()
+            }.padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
+        }
             LazyVGrid(columns: columns, spacing: 8) {
                 ForEach(areas, id: \.self) { area in
                     AreaCard(cycle: cycle, area: area)

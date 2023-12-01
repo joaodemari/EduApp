@@ -29,14 +29,15 @@ struct NoteView: View {
         NavigationView {
             List{
                 ForEach(areas) { area in
-                    Section {
-                        ForEach(area.notes){note in
-                            Text(note.descript)
+                    if(area.notes.count>0){
+                        Section {
+                            ForEach(area.notes){note in
+                                Text(note.descript)
+                            }
+                        } header: {
+                            Text(area.name)
                         }
-                    } header: {
-                        Text(area.name)
-                    }
-                }
+                    }}
                 Section {
                     ForEach(notes){note in
                         if(note.color == ColorApp.Gray){
