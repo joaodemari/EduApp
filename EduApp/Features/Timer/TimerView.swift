@@ -6,17 +6,21 @@
 //
 
 import SwiftUI
+import SwiftData
 
 
 struct TimerView: View {
+    
+    var area: Area
+
     var body: some View {
         VStack{
-            TimerCircle()
-        }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity).background(Color.black)
+            TimerCircle(area:area, gradientColor:area.color.getColor(), studyDayTimer:area.addStudyDay())
+            TimerAddNote()
+        }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
     }
 }
 
-
-#Preview{
-    TimerView()
+#Preview {
+    TimerView(area: Area(name: "dsadsa", color: .Blue))
 }

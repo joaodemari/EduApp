@@ -8,29 +8,43 @@
 import SwiftUI
 import SwiftData
 
+var sharedModelContainer: ModelContainer = {
+    let schema = Schema([
+        Area.self, Note.self
+    ])
+    let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+
+    do {
+        return try ModelContainer(for: schema, configurations: [modelConfiguration])
+    } catch {
+        fatalError("Could not create ModelContainer: \(error)")
+    }
+}()
+
 @main
 struct EduAppApp: App {
-//    var sharedModelContainer: ModelContainer = {
-//        let schema = Schema([
-//            Item.self,
-//        ])
-//        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-//
-//        do {
-//            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-//        } catch {
-//            fatalError("Could not create ModelContainer: \(error)")
-//        }
-//    }()
-
+    @State private var dataLoaded = false
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if !dataLoaded {
+                            LoadingView()
+                                .onAppear {
+                                    // Simulate data loading for 2 seconds
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                                        // Once data is loaded, set dataLoaded to true
+                                        dataLoaded = true
+                                    }
+                                }
+                        } else {
+                            HomeView()
+                                .modelContainer(sharedModelContainer)
+                        }
         }
-//        .modelContainer(sharedModelContainer)
+        .modelContainer(sharedModelContainer)
     }
 }
 
 #Preview{
-    ContentView()
+    HomeView().modelContainer(sharedModelContainer)
 }
